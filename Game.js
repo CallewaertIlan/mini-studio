@@ -1,4 +1,4 @@
-import Visiteur from './Modules/Visiteur.js'
+import { Visiteur } from './Modules/Visiteur.js'
 
 let test_visiteur = new Visiteur();
 
