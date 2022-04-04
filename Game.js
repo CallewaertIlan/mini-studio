@@ -1,6 +1,4 @@
-import { Visiteur } from './Modules/Visiteur.js'
-
-let test_visiteur = new Visiteur();
-
-console.log('Le nom du visiteur est')
-console.log(test_visiteur)
+import Batiment from "./Modules/Batiment.js";
+import Interface from "./Modules/Interface.js";
+import Player from "./Modules/Player.js";
+import Visiteur from "./Modules/Visiteur.js";

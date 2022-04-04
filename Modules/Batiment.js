@@ -1,4 +1,4 @@
-export class Batiment {
+export default class Batiment {
   constructor() {
 
   }

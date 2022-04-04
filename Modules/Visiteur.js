@@ -1,4 +1,4 @@
-export class Visiteur {
+export default class Visiteur {
   constructor() {
     this.name = 'Test'
   }
