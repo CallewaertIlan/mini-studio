@@ -9,3 +9,6 @@ div#logo h2, div#about-us h2, div#img h2, div#play h2{
 
 }
 
+div#logo{
+    background-image: url("../images/squad.png");
+}
