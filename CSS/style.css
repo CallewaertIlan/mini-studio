@@ -2,13 +2,35 @@ body{
     font-family: 'Varela Round', sans-serif;
 }
 
-div#logo h2, div#about-us h2, div#img h2, div#play h2{
+div#about-us h2{
     text-align: center;
     font-size: 50px;
-    padding-top: 5%;
 
 }
 
 div#logo{
     background-image: url("../images/squad.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 21%;
+    padding-bottom: 21%;
+}
+
+div#logo h2, div#img h2, div#play h2, div#about-us h2 {
+    text-align: center;
+    font-size: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #2395f3c0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div#logo h2, div#img h2, div#play h2 {
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
+div#about-us h2 {
+    margin-left: 40%;
+    margin-right: 40%;
 }
