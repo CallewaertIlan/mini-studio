@@ -56,6 +56,11 @@ div#about-us p {
     margin-right: 250px;
 }
 
+div#play h2 a {
+    text-decoration: none;
+    color: #000000;
+}
+
 
 
 .introduction{
