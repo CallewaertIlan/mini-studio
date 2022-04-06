@@ -1,6 +1,13 @@
 body{
     font-family: 'Varela Round', sans-serif;
+    background-image: url("../images/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
+
+
 
 div#about-us h2{
     text-align: center;
@@ -9,9 +16,11 @@ div#about-us h2{
 }
 
 div#logo{
-    background-image: url("../images/squad.png");
+    background-image: url("../images/back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     padding-top: 21%;
     padding-bottom: 21%;
 }
@@ -33,4 +42,15 @@ div#logo h2, div#img h2, div#play h2 {
 div#about-us h2 {
     margin-left: 40%;
     margin-right: 40%;
+}
+
+.introduction{
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+.introduction p{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 110px
 }
