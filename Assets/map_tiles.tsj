@@ -1,0 +1,15 @@
+{ "columns":88,
+ "image":"map_tiles.png",
+ "imageheight":3260,
+ "imagewidth":1416,
+ "margin":0,
+ "name":"map_tiles",
+ "spacing":0,
+ "tilecount":17864,
+ "tiledversion":"1.8.4",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#ffffff",
+ "type":"tileset",
+ "version":"1.8"
+}

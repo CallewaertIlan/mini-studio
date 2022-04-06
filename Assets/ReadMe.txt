@@ -1,1 +1,0 @@
-Il y aura la map et les autres assets ici
