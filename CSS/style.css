@@ -58,6 +58,11 @@ div#about-us p {
     color: rgb(0, 0, 0);
 }
 
+div#play h2 a {
+    text-decoration: none;
+    color: #000000;
+}
+
 
 
 .introduction{
