@@ -1,3 +1,5 @@
+import Batiment from "./Batiment"
+
 export default class Game extends Phaser.Scene
 {
 	constructor()
@@ -10,9 +12,7 @@ export default class Game extends Phaser.Scene
     }
 
     create() {
-        const map = this.make.tilemap({key: "map"})
-        const tileset = map.addTilesetImage('map_tiles', 'tiles')
-    
-        map.createStaticLayer('ground', tileset)
+        maisons = new Batiment
+        this.add.image(680, 384, 'map')
     }
 }
