@@ -1,0 +1,64 @@
+{
+    "anims": [
+        {
+            "key": "perso-walk-3",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "personnages",
+                    "frame": "perso3-1"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso3-2"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso3-3"
+                }
+            ]
+        },
+        {
+            "key": "perso-walk-2",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "personnages",
+                    "frame": "perso2-1"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso2-2"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso2-3"
+                }
+            ]
+        },
+        {
+            "key": "perso-walk-1",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "personnages",
+                    "frame": "perso1-1"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso1-2"
+                },
+                {
+                    "key": "personnages",
+                    "frame": "perso1-3"
+                }
+            ]
+        }
+    ]
+}

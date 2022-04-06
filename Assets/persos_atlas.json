@@ -1,0 +1,125 @@
+{
+    "frames": [
+        {
+            "filename": "perso1-1",
+            "frame": {
+                "w": 22,
+                "h": 32,
+                "x": 8,
+                "y": 8
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso1-2",
+            "frame": {
+                "w": 22,
+                "h": 32,
+                "x": 38,
+                "y": 8
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso1-3",
+            "frame": {
+                "w": 22,
+                "h": 32,
+                "x": 8,
+                "y": 48
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso2-1",
+            "frame": {
+                "w": 22,
+                "h": 32,
+                "x": 38,
+                "y": 48
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso3-1",
+            "frame": {
+                "w": 26,
+                "h": 32,
+                "x": 68,
+                "y": 8
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso2-2",
+            "frame": {
+                "w": 22,
+                "h": 30,
+                "x": 68,
+                "y": 48
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso2-3",
+            "frame": {
+                "w": 22,
+                "h": 30,
+                "x": 8,
+                "y": 88
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso3-2",
+            "frame": {
+                "w": 26,
+                "h": 30,
+                "x": 68,
+                "y": 86
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "perso3-3",
+            "frame": {
+                "w": 26,
+                "h": 30,
+                "x": 98,
+                "y": 48
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

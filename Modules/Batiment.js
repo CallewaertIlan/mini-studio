@@ -1,7 +1,11 @@
 export default class Batiment {
-  constructor(scene) {
-    scene.add.image(100, 200, 'maison')
-    scene.add.image(300, 300, 'maison')
-    scene.add.image(600, 50, 'maison')
+  constructor(x, y, skin) {
+    this.x = x
+    this.y = y
+    this.skin = skin
+  }
+
+  create(scene) {
+    scene.add.image(this.x, this.y, this.skin)
   }
 }
