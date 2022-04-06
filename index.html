@@ -1,76 +1,71 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
+  
   <head>
     <meta charset="utf-8">
-    <title>T.I.M.E Entertainement</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="./CSS/footer.css">
     <link rel="stylesheet" href="./CSS/navmenu.css">
     <link rel="stylesheet" href="./CSS/formulaire.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <!-- police -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <!-- police -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js" charset="utf-8"></script>
-    <script src="//cdn.jsdelivr.net/npm/phaser-matter-collision-plugin" charset="utf-8"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js" charset="utf-8"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/phaser-matter-collision-plugin" charset="utf-8"></script> -->
+    <title>T.I.M.E Entertainement</title>
   </head> 
+  
   <body>
+    
     <nav class="nav-menu">
-      <a class="compagny-name"href="#TOP">
-        <h1>
-          T.I.M.E Entertainement
-        </h1>
+      <a class="compagny-name" href="#TOP">
+        <h1>T.I.M.E Entertainement</h1>
       </a>
       <ul>
-          <li class="button">
-            <a href="#about-us">
-                About us 
-            </a>
-          </li>
-          <li class="button">
-            <a href="#play">
-                Play
-            </a>
-          </li>
-          <li class="button">
-            <label for='show' class="show-form">Contact us</label>
-          </li>
+        <li class="button">
+          <a href="#about-us">About-us </a>
+        </li>
+        <li class="button">
+          <a href="#images">Images</a>
+        </li>
+        <li class="button">
+          <a href="#play">Play</a>
+        </li>
+        <li class="button">
+          <label class="show-form" for='show'>Contact-us</label>
+        </li>
       </ul>
     </nav>
-    <div class="contact-us-global">
+    
+    <div class="contact-us">
       <input type="checkbox" id="show">
       <div class="container">
-          <label for='show' class="close-form">x</label>
-          <form action="https://formspree.io/f/mdobljrr" method="POST" class="form-container">
-              <div class="data">
-                  <label>
-                      <p class="contact">Your email :</p>
-                      <input type="email" name="email" class="input">
-                  </label>
-                  <label>
-                      <p class="contact">Your message :</p>
-                      <textarea name="message" class="input"></textarea>
-                  </label>
-              </div>
-              <button type="submit">Send</button>
-          </form>
+        <label class="close-form" for="show">x</label>
+        <form class="form-container" action="https://formspree.io/f/mdobljrr" method="POST">
+          <div class="data">
+            <label>
+                <p class="contact">Your email :</p>
+                <input class="input" type="email" name="email">
+            </label>
+            <label>
+                <p class="contact">Your message :</p>
+                <textarea class="input" name="message"></textarea>
+            </label>
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </div>
-  </div>
+    </div>
 
     <div id="logo">
-      <img src="./images/logo.png" alt="" width="15%">
+      <img src="./images/logo.png" alt="Web Site Logo" width="15%">
     </div>
+    
     <div id="about-us">
       <h2>About-us</h2>
-      <p>
-        We are the T.I.M.E Entertainment Development Team and we are currently creating a new video game
-        which is called <b>Chrono Tycoon</b> based on the theme of an amusement park.
-      </p>
-      <p>
-        We created this studio to satisfy as many people as possible and we want to expand as soon as possible to become a big studio.
-        We also have big ambitions and we want to make ourselves known through this new game.
-      </p>
+      <p>We are the T.I.M.E Entertainment Development Team and we are currently creating a new video game which is called <b>Chrono Tycoon</b> based on the theme of an amusement park.</p>
+      <p>We created this studio to satisfy as many people as possible and we want to expand as soon as possible to become a big studio. We also have big ambitions and we want to make ourselves known through this new game.</p>
       <br>
       <br>
       <br>
@@ -95,16 +90,40 @@
       <br>
       <br>
       <br>
-
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
-    <div id="img">
+      
+    <div id="images">
       <h2>Images</h2>
-      <div class="introduction">
-        <img src="./images/pov.jpg" alt="" width=600px>
+      <div class="image-presentation">
+        <img src="./images/pov.jpg" alt="Image Presentation" width=500px>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi ipsum beatae aliquam consequuntur voluptatum id et tenetur inventore voluptas, doloribus eius dolores placeat repudiandae eveniet magnam possimus vero esse odit.</p>
-
       </div>
-        
+      <div class="image-presentation">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi ipsum beatae aliquam consequuntur voluptatum id et tenetur inventore voluptas, doloribus eius dolores placeat repudiandae eveniet magnam possimus vero esse odit.</p>
+        <img src="./images/pov.jpg" alt="Image Presentation" width=500px>
+      </div>
+      <div class="image-presentation">
+        <img src="./images/pov.jpg" alt="Image Presentation" width=500px>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi ipsum beatae aliquam consequuntur voluptatum id et tenetur inventore voluptas, doloribus eius dolores placeat repudiandae eveniet magnam possimus vero esse odit.</p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <br>
@@ -124,15 +143,9 @@
       <br>
       <br>
     </div>
+    
     <div id="play">
-      <h2><a href="/Game/game.html">Play</a></h2>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <h2><a href="./Game/game.html" target="_BLANK">Play</a></h2>
       <br>
       <br>
       <br>
@@ -164,12 +177,11 @@
       <br>
       <br>
     </div>
+  
   </body>
+  
   <footer class="footer">
-          
-      <p class="copyright">
-          Copyright &copy; : T.I.M.E Entertainement All Right Reserved
-      </p>
-
+      <p class="copyright">Copyright &copy; : T.I.M.E Entertainement All Right Reserved</p>
   </footer>
+
 </html>
