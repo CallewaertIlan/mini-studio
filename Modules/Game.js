@@ -43,13 +43,11 @@ export default class Game extends Phaser.Scene
         // if (this.persoTimer + 5000 <= this.time.now) {
         //     console.log("C'est l'heure !!")
         //     this.persoTimer = this.time.now
-        //     this.listEntities.push(new Visiteur(674, 211))
+        //     this.listEntities.push(new Visiteur(20, 404))
         // }
 
         for (let index = 0; index < this.listEntities.length; index++) {
-            this.listEntities[index].update()           
-        }
-
-        
+            this.listEntities[index].update()
+        }        
     }
 }
