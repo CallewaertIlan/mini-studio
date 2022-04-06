@@ -10,6 +10,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    color: aliceblue;
 }
 
 
@@ -54,6 +55,7 @@ div#about-us p {
     font-size: 25px;
     margin-left: 250px;
     margin-right: 250px;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -67,5 +69,6 @@ div#about-us p {
     font-size: 30px;
     margin-left: 30px;
     margin-right: 110px;
+    color: rgb(0, 0, 0);
 }
 
