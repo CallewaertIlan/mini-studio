@@ -8,4 +8,8 @@ export default class Batiment {
   create(scene) {
     scene.add.image(this.x, this.y, this.skin)
   }
+
+  update() {
+    
+  }
 }
