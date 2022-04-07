@@ -2,6 +2,7 @@ import Batiment from "./Batiment.js"
 import Visiteur from "./Visiteur.js"
 import Interface from "./Interface.js"
 import Image from "./Image.js"
+import Canards from "./Canards.js"
 
 export default class Game extends Phaser.Scene
 {
@@ -38,6 +39,7 @@ export default class Game extends Phaser.Scene
         this.listEntities.push(new Batiment(1200, 550, 'arc'))
         this.listEntities.push(new Batiment(780, 610, 'train'))
         this.listEntities.push(new Batiment(275, 610, 'frite'))
+        this.listEntities.push(new Canards(600, 400, 'canard'))
 
         for (let index = 0; index < this.listEntities.length; index++) {
             this.listEntities[index].create(this)           
