@@ -4,7 +4,7 @@ export default class Interface {
   }
 
   preload() {
-        
+    
   }
 
   create(scene) {
@@ -12,6 +12,6 @@ export default class Interface {
   }
 
   update() {
-
+    
   }
 }

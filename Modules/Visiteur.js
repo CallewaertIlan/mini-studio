@@ -20,6 +20,9 @@ export default class Visiteur {
       [1050, 460], // 8
       [980, 460], // 9
       [780, 460], // 10
+      [275, 460], // 11
+      [275, 404], // 12
+      [-10, 404], // 12
     ]
 
     this.posAttraction = 0
@@ -36,14 +39,15 @@ export default class Visiteur {
     // trie la liste
     this.path.sort()
 
-    console.log(this.path)
-
     this.player.setVelocityX(1)
-    console.log(this.player.x, this.player.y)
     this.count = 0
   }
 
   update() {
+    this.moveToAttraction()
+  }
+
+  animation() {
     // animation du visiteur
     if (this.skin == 'perso1-1') {
       this.player.anims.play('perso-walk-1', true)
@@ -54,7 +58,6 @@ export default class Visiteur {
     else if (this.skin == "perso3-1") {
       this.player.anims.play('perso-walk-3', true)
     }
-    this.moveToAttraction()
   }
 
   addPath() {
@@ -81,6 +84,7 @@ export default class Visiteur {
   }
 
   deplacementX(x) {
+    this.animation()
     if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
       this.moveToX(0)
       this.posAttraction += 1
@@ -91,6 +95,7 @@ export default class Visiteur {
   }
 
   deplacementY(y) {
+    this.animation()
     if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
       this.moveToY(0)
       this.posAttraction += 1
@@ -159,11 +164,19 @@ export default class Visiteur {
       }
     }
     else if (this.posAttraction === 10) {
-      this.moveToY(0)
+      this.deplacementY(0)
+      this.deplacementX(-1)
+    }
+    else if (this.posAttraction === 11) {
+      this.deplacementX(-1)
+    }
+    else if (this.posAttraction === 12) {
+      this.deplacementY(-1)
+    }
+    else if (this.posAttraction === 13) {
       this.deplacementX(-1)
     }
     else {
-      console.log(this.player.x, this.player.y)
       this.stopMovement()
     }
   }

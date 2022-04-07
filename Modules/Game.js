@@ -25,8 +25,10 @@ export default class Game extends Phaser.Scene
         this.add.image(680, 384, 'map')
         
         // création d'un joueur
-        let rand = Math.floor(Math.random() * 3)
-        this.listEntities.push(new Visiteur(20, 404))
+        for (let index = 0; index < 10; index++) {
+            this.listEntities.push(new Visiteur(-100 * index, 404))
+        }
+        
         // this.listEntities.push(new Visiteur(20, 404, 'perso3-1'))
         // this.listEntities.push(new Visiteur(275, 211, 'perso1-1'))               Spawn Maison 1
         // this.listEntities.push(new Visiteur(674, 211, 'perso1-1'))               Spawn Maison 2
@@ -50,19 +52,18 @@ export default class Game extends Phaser.Scene
 
         let coins = new Interface(0)
         coins.create(this)
-
-
     }
 
     update() {
         // if (this.persoTimer + 5000 <= this.time.now) {
         //     console.log("C'est l'heure !!")
         //     this.persoTimer = this.time.now
-        //     this.listEntities.push(new Visiteur(20, 404))
+        //     this.listEntities.push(new Visiteur(-100, 404))
         // }
 
         for (let index = 0; index < this.listEntities.length; index++) {
             this.listEntities[index].update()
+            console.log(this.listEntities[index])
         }        
     }
 }
