@@ -29,10 +29,6 @@ export default class Game extends Phaser.Scene
             this.listEntities.push(new Visiteur(-100 * index, 404))
         }
         
-        // this.listEntities.push(new Visiteur(20, 404))
-        // this.listEntities.push(new Visiteur(275, 211, 'perso1-1'))               Spawn Maison 1
-        // this.listEntities.push(new Visiteur(674, 211, 'perso1-1'))               Spawn Maison 2
-
         // création d'une maison
         this.listEntities.push(new Batiment(275, 85, 'glace'))
         this.listEntities.push(new Batiment(670, 80, 'autotamponeuse'))
@@ -47,14 +43,15 @@ export default class Game extends Phaser.Scene
             this.listEntities[index].create(this)           
         }
 
-        let wood = new Image(80, 30, 'wood')
-        wood.create(this)
+        this.wood = new Image(80, 30, 'wood')
+        this.wood.create(this)
 
-        let coins = new Interface(0)
-        coins.create(this)
+        this.coins = new Interface(0)
+        this.coins.create(this)
     }
 
     update() {
+
         if (this.persoTimer + 5000 <= this.time.now && this.persoTimer + 6000 >= this.time.now) {
             console.log("C'est l'heure !!")
             this.persoTimer = this.time.now
@@ -63,14 +60,12 @@ export default class Game extends Phaser.Scene
 
         for (let index = 0; index < this.listEntities.length - 1; index++) {
             this.listEntities[index].update()
-        }        
+        }
+          
     }
 
     newVisiteur(x, y) {
         this.listEntities[this.listEntities.length - 1].create(this)
         this.listEntities.push(new Visiteur(x, y))
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        console.log(this.listEntities)
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     }
 }
