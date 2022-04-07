@@ -22,7 +22,7 @@ export default class Visiteur {
       [780, 460], // 10
       [275, 460], // 11
       [275, 404], // 12
-      [-10, 404], // 12
+      [-1000, 404], // 12
     ]
 
     this.posAttraction = 0
