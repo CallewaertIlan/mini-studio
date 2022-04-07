@@ -44,22 +44,29 @@ div#about-us p {
 }
 
 div#images {
-    background-color: aliceblue;
+    background-color: #f0f8ff33;
+
 }
 
 div#images div.image-presentation {
     display: flex;
-    margin: 100px;
+    margin: 100px
 }
 
 div#images div.image-presentation p {
-    color: #000000;
+    color: #ffffff;
     font-size: 25px;
     margin-top: 100px;
     margin-left: 50px;
     margin-right: 50px;
     text-align: justify;
+    border-radius: 50%;
 }
+
+div#images div.image-presentation img{
+    border-radius: 8%;
+}
+
 
 div#play h2 a {
     text-decoration: none;
