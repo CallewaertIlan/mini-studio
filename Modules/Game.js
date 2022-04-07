@@ -27,13 +27,18 @@ export default class Game extends Phaser.Scene
         // this.listEntities.push(new Visiteur(20, 404, 'perso3-1'))
         // this.listEntities.push(new Visiteur(275, 211, 'perso1-1'))               Spawn Maison 1
         // this.listEntities.push(new Visiteur(674, 211, 'perso1-1'))               Spawn Maison 2
-        
+    //     listEmplacementCheminAttraction = [
+    //         [20, 404],
+    //         [275, 211],
+    //         [674, 211],
+    //         [0, 0]
+    // ]
         // création d'une maison
         this.listEntities.push(new Batiment(1200, 550, 'arc'))
-        this.listEntities.push(new Batiment(680, 100, 'autotamponeuse'))
-        this.listEntities.push(new Batiment(1200, 100, 'chapito'))
-        this.listEntities.push(new Batiment(1250, 320, 'chateau_gonflable'))
-        this.listEntities.push(new Batiment(800, 630, 'train'))
+        this.listEntities.push(new Batiment(670, 80, 'autotamponeuse')) 
+        this.listEntities.push(new Batiment(1200, 70, 'chapito'))
+        this.listEntities.push(new Batiment(1260, 310, 'chateau_gonflable'))
+        this.listEntities.push(new Batiment(780, 610, 'train'))
 
         for (let index = 0; index < this.listEntities.length; index++) {
             this.listEntities[index].create(this)           

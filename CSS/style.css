@@ -22,8 +22,8 @@ div#logo {
     padding-bottom: 20%;
 }
 
-div#logo img {
-    margin-left: 725px;
+div#logo {
+    text-align: center;
 }
 
 div#about-us h2, div#images h2, div#play h2 {
