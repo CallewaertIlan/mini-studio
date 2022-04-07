@@ -1,5 +1,7 @@
 import Batiment from "./Batiment.js"
 import Visiteur from "./Visiteur.js"
+import Interface from "./Interface.js"
+import Image from "./Image.js"
 
 export default class Game extends Phaser.Scene
 {
@@ -40,6 +42,14 @@ export default class Game extends Phaser.Scene
         for (let index = 0; index < this.listEntities.length; index++) {
             this.listEntities[index].create(this)           
         }
+
+        let wood = new Image(80, 30, 'wood')
+        wood.create(this)
+
+        let coins = new Interface(0)
+        coins.create(this)
+
+
     }
 
     update() {
