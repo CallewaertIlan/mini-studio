@@ -18,6 +18,8 @@ export default class Visiteur {
     // trie la liste
     this.path.sort()
 
+    console.log(this.path)
+
     this.player.setVelocityX(1)
     console.log(this.player.x, this.player.y)
     this.count = 0

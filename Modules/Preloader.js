@@ -4,7 +4,11 @@ export default class Preloader extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('maison', '../Assets/maison.png')
+        this.load.image('arc', '../Assets/arc.png')
+        this.load.image('autotamponeuse', '../Assets/autotamponeuse.png')
+        this.load.image('chapito', '../Assets/chapito.png')
+        this.load.image('chateau_gonflable', '../Assets/chateau_gonflable.png')
+        this.load.image('train', '../Assets/train.png')
         this.load.image('map', '../Assets/map.png')
         this.load.atlas('personnages', '../Assets/persos.png', '../Assets/persos_atlas.json')
         this.load.animation('personnages_anim', '../Assets/persos_anim.json')
