@@ -5,6 +5,8 @@ export default class Visiteur {
     this.listNamePerso = ['perso1-1', 'perso2-1', 'perso3-1']
     this.skin = this.listNamePerso[Math.floor(Math.random() * 3)]
     this.path = []
+    this.moveX = 0
+    this.moveY = 0
   }
 
   create(scene) {
@@ -114,4 +116,17 @@ export default class Visiteur {
     this.player.setVelocityX(0)
     this.player.setVelocityY(0)
   }
+
+  moveToX() {
+    this.player.x, this.player.y
+  }
+
+  moveToY() {
+    this.player.x, this.player.y
+  }
+  //     listEmplacementCheminAttraction = [
+  //         [20, 404],
+  //         [275, 211],
+  //         [674, 211]
+  // ]
 }
