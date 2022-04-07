@@ -7,28 +7,30 @@ export default class Visiteur {
     this.path = []
     this.moveX = 0
     this.moveY = 0
+    this.side = 'right'
 
     this.listeDeplacement = [
       [275, 404], // 0
-      [275, 211], // 1
-      [674, 211], // 2
-      [975, 211], // 3
+      [275, 211], // 1          Attraction 1
+      [674, 211], // 2          Attraction 2
+      [975, 211], // 3          Attraction 3
       [1040, 211], // 4
-      [1060, 300], // 5
+      [1060, 300], // 5          Attraction 4
       [1060, 350], // 6
       [1050, 300], // 7
-      [1050, 460], // 8
+      [1050, 460], // 8         Attraction 5
       [980, 460], // 9
-      [780, 460], // 10
-      [275, 460], // 11
-      [275, 404], // 12
-      [-1000, 404], // 12
+      [780, 460], // 10          Attraction 6
+      [275, 460], // 11          Attraction 7
+      [275, 410], // 12
+      [-1000, 410], // 13
     ]
 
     this.posAttraction = 0
   }
 
   create(scene) {
+    console.log(Phaser.Physics.Matter)
     this.player = new Phaser.Physics.Matter.Sprite(scene.matter.world, this.x, this.y, 'personnages', this.skin)
     scene.add.existing(this.player)
 
@@ -47,16 +49,16 @@ export default class Visiteur {
     this.moveToAttraction()
   }
 
-  animation() {
+  animation(name) {
     // animation du visiteur
     if (this.skin == 'perso1-1') {
-      this.player.anims.play('perso-walk-1', true)
+      this.player.anims.play(name, true)
     }
     else if (this.skin == "perso2-1") {
-      this.player.anims.play('perso-walk-2', true)
+      this.player.anims.play(name, true)
     }
     else if (this.skin == "perso3-1") {
-      this.player.anims.play('perso-walk-3', true)
+      this.player.anims.play(name, true)
     }
   }
 
@@ -84,7 +86,13 @@ export default class Visiteur {
   }
 
   deplacementX(x) {
-    this.animation()
+    if (this.side === 'right') {
+      this.animation('perso-walk-1')
+    }
+    else {
+      this.animation('perso-walk-reverse-1')
+    }
+
     if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
       this.moveToX(0)
       this.posAttraction += 1
@@ -95,7 +103,13 @@ export default class Visiteur {
   }
 
   deplacementY(y) {
-    this.animation()
+    if (this.side === 'right') {
+      this.animation('perso-walk-1')
+    }
+    else {
+      this.animation('perso-walk-reverse-1')
+    }
+
     if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
       this.moveToY(0)
       this.posAttraction += 1
@@ -112,11 +126,20 @@ export default class Visiteur {
     else if (this.posAttraction === 1) {
       this.deplacementY(-1)
     }
+    else if (1 === 2) {
+      this.stopMovement()
+    }
     else if (this.posAttraction === 2) {
       this.deplacementX(1)
     }
+    else if (1 === 2) {
+      this.stopMovement()
+    }
     else if (this.posAttraction === 3) {
       this.deplacementX(1)
+    }
+    else if (1 === 2) {
+      this.stopMovement()
     }
     else if (this.posAttraction === 4) {
       if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
@@ -135,9 +158,13 @@ export default class Visiteur {
         this.moveToY(1)
       }
     }
+    else if (1 === 2) {
+      this.stopMovement()
+    }
     else if (this.posAttraction === 6) {
       if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
         this.posAttraction += 1
+        this.side = 'left'
       }
       else {
         this.moveToX(0)
@@ -155,6 +182,9 @@ export default class Visiteur {
         this.moveToY(1)
       }
     }
+    else if (1 === 2) {
+      this.stopMovement()
+    }
     else if (this.posAttraction === 9) {
       if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
         this.posAttraction += 1
@@ -167,8 +197,14 @@ export default class Visiteur {
       this.deplacementY(0)
       this.deplacementX(-1)
     }
+    else if (1 === 2) {
+      this.stopMovement()
+    }
     else if (this.posAttraction === 11) {
       this.deplacementX(-1)
+    }
+    else if (1 === 2) {
+      this.stopMovement()
     }
     else if (this.posAttraction === 12) {
       this.deplacementY(-1)

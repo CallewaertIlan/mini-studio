@@ -26,9 +26,9 @@ export default class Game extends Phaser.Scene
         
         // création d'un joueur
         for (let index = 0; index < 2; index++) {
-            this.listEntities.push(new Visiteur(-100 * index, 404))
+            this.listEntities.push(new Visiteur(-100 * index, 375))
         }
-        
+
         // création d'une maison
         this.listEntities.push(new Batiment(275, 85, 'glace'))
         this.listEntities.push(new Batiment(670, 80, 'autotamponeuse'))
@@ -52,10 +52,9 @@ export default class Game extends Phaser.Scene
 
     update() {
 
-        if (this.persoTimer + 5000 <= this.time.now && this.persoTimer + 6000 >= this.time.now) {
-            console.log("C'est l'heure !!")
+        if (this.persoTimer + 2000 <= this.time.now && this.persoTimer + 6000 >= this.time.now) {
             this.persoTimer = this.time.now
-            this.newVisiteur(-100, 404)
+            this.newVisiteur(-100, 375)
         }
 
         for (let index = 0; index < this.listEntities.length - 1; index++) {

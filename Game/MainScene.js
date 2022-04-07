@@ -9,12 +9,9 @@ const config = {
 	physics: {
 		default: 'matter',
 		matter: {
-			gravity: {y: 0}
+			gravity: {y: 0},
 		}
 	},
-	// scale: {
-	// 	zoom: 2
-	// },
 	scene: [Preloader, Game]
 }
 
