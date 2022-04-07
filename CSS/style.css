@@ -18,12 +18,12 @@ div#logo {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding-top: 20%;
+    padding-top: 15%;
     padding-bottom: 20%;
 }
 
 div#logo img {
-    margin-left: 800px;
+    margin-left: 725px;
 }
 
 div#about-us h2, div#images h2, div#play h2 {

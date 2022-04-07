@@ -1,45 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="./CSS/navmenu.css">
-    <link rel="stylesheet" href="./CSS/formulaire.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/form.css">
     <link rel="stylesheet" href="./CSS/footer.css">
-    <!-- police -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js" charset="utf-8"></script> -->
-    <!-- <script src="//cdn.jsdelivr.net/npm/phaser-matter-collision-plugin" charset="utf-8"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js" charset="UTF-8"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser-matter-collision-plugin" charset="UTF-8"></script> -->
     <title>T.I.M.E Entertainement</title>
   </head> 
   
   <body>
     
-    <nav class="nav-menu">
-      <a class="compagny-name" href="#TOP">
-        <h1>T.I.M.E Entertainement</h1>
-      </a>
-      <ul>
-        <li class="button">
-          <a href="#about-us">About-us </a>
-        </li>
-        <li class="button">
-          <a href="#images">Images</a>
-        </li>
-        <li class="button">
-          <a href="#play">Play</a>
-        </li>
-        <li class="button">
-          <label class="show-form" for='show'>Contact-us</label>
-        </li>
-      </ul>
-    </nav>
-    
+    <header class="header">
+      <nav class="nav-menu">
+        <a class="compagny-name" href="#TOP">
+          <h1>T.I.M.E Entertainement</h1>
+        </a>
+        <ul>
+          <li class="button">
+            <a href="#about-us">About-us</a>
+          </li>
+          <li class="button">
+            <a href="#images">Images</a>
+          </li>
+          <li class="button">
+            <a href="#play">Play</a>
+          </li>
+          <li class="button">
+            <label class="show-form" for="show">Contact-us</label>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <div class="contact-us">
-      <input type="checkbox" id="show">
+      <input id="show" type="checkbox">
       <div class="container">
         <label class="close-form" for="show">x</label>
         <form class="form-container" action="https://formspree.io/f/mdobljrr" method="POST">
@@ -59,7 +60,7 @@
     </div>
 
     <div id="logo">
-      <img src="./images/logo.png" alt="Web Site Logo" width="15%">
+      <img src="./images/logo.png" alt="Web Site Logo" width="20%">
     </div>
     
     <div id="about-us">
@@ -145,7 +146,9 @@
     </div>
     
     <div id="play">
-      <h2><a href="./Game/game.html" target="_BLANK">Play</a></h2>
+      <h2>
+        <a href="./Game/game.html" target="_BLANK">Play</a>
+      </h2>
       <br>
       <br>
       <br>

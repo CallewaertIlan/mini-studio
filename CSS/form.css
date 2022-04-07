@@ -1,0 +1,48 @@
+.show-form {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#show:checked ~ .container {
+    display: block;
+}
+
+.container {
+    background-color: #FFFFFF;
+    padding: 2%;
+    display: none;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.close-form {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-form:hover {
+    color: #2396F3;
+}
+
+.contact {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.input {
+   font-size: 15px;
+   width: 100%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
