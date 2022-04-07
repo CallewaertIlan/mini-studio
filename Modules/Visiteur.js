@@ -1,5 +1,5 @@
 export default class Visiteur {
-  constructor(x, y, skin) {
+  constructor(x, y) {
     this.x = x
     this.y = y
     this.listNamePerso = ['perso1-1', 'perso2-1', 'perso3-1']
@@ -7,6 +7,22 @@ export default class Visiteur {
     this.path = []
     this.moveX = 0
     this.moveY = 0
+
+    this.listeDeplacement = [
+      [275, 404], // 0
+      [275, 211], // 1
+      [674, 211], // 2
+      [975, 211], // 3
+      [1040, 211], // 4
+      [1060, 300], // 5
+      [1060, 350], // 6
+      [1050, 300], // 7
+      [1050, 460], // 8
+      [980, 460], // 9
+      [780, 460], // 10
+    ]
+
+    this.posAttraction = 0
   }
 
   create(scene) {
@@ -38,35 +54,7 @@ export default class Visiteur {
     else if (this.skin == "perso3-1") {
       this.player.anims.play('perso-walk-3', true)
     }
-
-    // chemin qu'il suit pour aller jusque la 1ere attraction
-    if (this.count <= 450) {
-      this.count += 1
-      this.moveToAttraction1()
-    }
-    
-    // chemin qu'il suit pour aller jusque la 2eme attraction
-    else if (this.count <= 840) {
-      this.count += 1
-      this.moveToAttraction2()
-    }
-
-    // chemin qu'il suit pour aller jusque la 3eme attraction
-    else if (this.count <= 1150) {
-      this.count += 1
-      this.moveToAttraction3()
-    }
-
-    // chemin qu'il suit pour aller jusque la 4eme attraction
-    else if (this.count <= 1305) {
-      this.count += 1
-      this.moveToAttraction4()
-    }
-
-    // S'arréter
-    else {
-      this.stopMovement()
-    }
+    this.moveToAttraction()
   }
 
   addPath() {
@@ -79,54 +67,104 @@ export default class Visiteur {
     }
   }
 
-  moveToAttraction1() {
-    if (this.count <= 255) {
-      this.player.setVelocityX(1)
-    }
-    else{
-      this.player.setVelocityX(0)
-      this.player.setVelocityY(-1)
-    }
-  }
-
-  moveToAttraction2() {
-    if (this.count <= 840) {
-      this.player.setVelocityY(0)
-      this.player.setVelocityX(1)
-    }
-  }
-
-  moveToAttraction3() {
-    if (this.count <= 1155) {
-      this.player.setVelocityY(0)
-      this.player.setVelocityX(1)
-    }
-  }
-
-  moveToAttraction4() {
-    if (this.count <= 1205) {
-      this.player.setVelocityX(1)
-    }
-    else {
-      this.player.setVelocityY(1)
-    }
-  }
-
   stopMovement() {
     this.player.setVelocityX(0)
     this.player.setVelocityY(0)
   }
 
-  moveToX() {
-    this.player.x, this.player.y
+  moveToX(x) {
+    this.player.setVelocityX(x)
   }
 
-  moveToY() {
-    this.player.x, this.player.y
+  moveToY(y) {
+    this.player.setVelocityY(y)
   }
-  //     listEmplacementCheminAttraction = [
-  //         [20, 404],
-  //         [275, 211],
-  //         [674, 211]
-  // ]
+
+  deplacementX(x) {
+    if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
+      this.moveToX(0)
+      this.posAttraction += 1
+    }
+    else {
+      this.moveToX(x)
+    }
+  }
+
+  deplacementY(y) {
+    if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
+      this.moveToY(0)
+      this.posAttraction += 1
+    }
+    else {
+      this.moveToY(y)
+    }
+  }
+
+  moveToAttraction() {
+    if (this.posAttraction === 0) {
+      this.deplacementX(1)
+    }
+    else if (this.posAttraction === 1) {
+      this.deplacementY(-1)
+    }
+    else if (this.posAttraction === 2) {
+      this.deplacementX(1)
+    }
+    else if (this.posAttraction === 3) {
+      this.deplacementX(1)
+    }
+    else if (this.posAttraction === 4) {
+      if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
+        this.posAttraction += 1
+      }
+      else {
+        this.moveToX(1)
+      }
+    }
+    else if (this.posAttraction === 5) {
+      if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
+        this.moveToY(0)
+        this.posAttraction += 1
+      }
+      else {
+        this.moveToY(1)
+      }
+    }
+    else if (this.posAttraction === 6) {
+      if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
+        this.posAttraction += 1
+      }
+      else {
+        this.moveToX(0)
+        this.moveToY(1)
+      }
+    }
+    else if (this.posAttraction === 7) {
+      this.deplacementX(-1)
+    }
+    else if (this.posAttraction === 8) {
+      if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
+        this.posAttraction += 1
+      }
+      else {
+        this.moveToY(1)
+      }
+    }
+    else if (this.posAttraction === 9) {
+      if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
+        this.posAttraction += 1
+      }
+      else {
+        this.moveToX(-1)
+      }
+    }
+    else if (this.posAttraction === 10) {
+      this.moveToY(0)
+      this.deplacementX(-1)
+    }
+    else {
+      console.log(this.player.x, this.player.y)
+      this.stopMovement()
+    }
+  }
 }
