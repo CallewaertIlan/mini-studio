@@ -31,19 +31,17 @@ export default class Game extends Phaser.Scene
         }
 
         // création d'une maison
-        this.listBatiments.push(new Batiment(275, 85, 'glace'))
         
         // this.listBatiments.push(new Button(255, 65))
-        this.button = new Button(255, 65, 'autotamponeuse')
-        this.button.create(this)
         
-        // this.listBatiments.push(new Batiment(670, 80, 'autotamponeuse'))
-        this.listBatiments.push(new Batiment(1200, 70, 'chapito'))
-        this.listBatiments.push(new Batiment(1260, 310, 'chateau_gonflable'))
-        this.listBatiments.push(new Batiment(1200, 550, 'arc'))
-        this.listBatiments.push(new Batiment(780, 610, 'train'))
-        this.listBatiments.push(new Batiment(275, 610, 'frite'))
-        this.listBatiments.push(new Canards(600, 400, 'canard'))
+        this.listBatiments.push(new Batiment(275, 85, 'glace'))
+        this.listBatiments.push(new Button(675, 65, 'autotamponeuse'))
+        this.listBatiments.push(new Button(1200, 70, 'chapito'))
+        this.listBatiments.push(new Button(1260, 310, 'chateau_gonflable'))
+        this.listBatiments.push(new Button(1200, 550, 'arc'))
+        this.listBatiments.push(new Button(780, 610, 'train'))
+        this.listBatiments.push(new Button(275, 610, 'frite'))
+        // this.listBatiments.push(new Button(600, 400, 'canard'))
 
         for (let index = 0; index < this.listEntities.length - 1; index++) {
             this.listEntities[index].create(this)           

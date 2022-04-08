@@ -1,27 +1,28 @@
 import Batiment from "./Batiment.js"
 
 export default class Button {
-    constructor(x, y, attractionImg) {
-      this.x = x
-      this.y = y
-      this.attractionImg = attractionImg
-      console.log(this.attractionImg)
-    }
-  
-    create(scene) {
-        this.scene = scene
-        this.cadenas = scene.add.sprite(670, 80, 'cadenas').setInteractive()
-        this.cadenas.on('pointerdown', this.test)
-    }
-  
-    update() {
-      
-    }
-
-    test() {
-        let building = new Batiment(670, 80, this.attractionImg)
-        building.create(this.scene)
-    }
+  constructor(x, y, attractionImg) {
+    this.x = x
+    this.y = y
+    this.attractionImg = attractionImg
+    console.log(this.attractionImg)
   }
 
-  // object.setActive(false).setVisible(false);
+  create(scene) {
+    console.log(this)
+    this.scene = scene
+    this.cadenas = scene.add.sprite(this.x, this.y, 'cadenas').setInteractive()
+    this.cadenas.attractionImg = this.attractionImg
+    this.cadenas.on('pointerdown', this.displayAttractionMaximeLeChiant)
+  }
+
+  update() {
+    
+  }
+
+  displayAttractionMaximeLeChiant() {
+    let building = new Batiment(this.x, this.y, this.attractionImg)
+    building.create(this.scene)
+    this.setActive(false).setVisible(false);
+  }
+}
