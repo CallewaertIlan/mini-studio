@@ -9,11 +9,15 @@ export default class Canards
     create(scene) {
       scene.add.image(this.x, this.y, this.skin)
     }
-    floating() {
-        this.Canards.setVelocityY(5)
-      }
+
+    floating(){
+
+
+    }
+    
+
     update() {
-     
+
     }
   }
   
