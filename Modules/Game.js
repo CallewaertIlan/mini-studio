@@ -56,7 +56,9 @@ export default class Game extends Phaser.Scene
 
     update() {
 
-        if (this.persoTimer + 2000 <= this.time.now && this.persoTimer + 6000 >= this.time.now) {
+        console .log(this.time.now)
+
+        if (this.persoTimer + 2000 <= this.time.now) {
             this.persoTimer = this.time.now
             this.newVisiteur(-100, 375)
         }
