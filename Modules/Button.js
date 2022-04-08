@@ -11,14 +11,14 @@ export default class Button {
     this.scene = scene
     this.cadenas = scene.add.sprite(this.x, this.y, 'cadenas').setInteractive()
     this.cadenas.attractionImg = this.attractionImg
-    this.cadenas.on('pointerdown', this.displayAttractionMaximeLeChiant)
+    this.cadenas.on('pointerdown', this.displayAttraction)
   }
 
   update() {
     
   }
 
-  displayAttractionMaximeLeChiant() {
+  displayAttraction() {
     let building = new Batiment(this.x, this.y, this.attractionImg)
     building.create(this.scene)
     this.setActive(false).setVisible(false);
