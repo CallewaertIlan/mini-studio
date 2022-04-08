@@ -5,11 +5,9 @@ export default class Button {
     this.x = x
     this.y = y
     this.attractionImg = attractionImg
-    console.log(this.attractionImg)
   }
 
   create(scene) {
-    console.log(this)
     this.scene = scene
     this.cadenas = scene.add.sprite(this.x, this.y, 'cadenas').setInteractive()
     this.cadenas.attractionImg = this.attractionImg
