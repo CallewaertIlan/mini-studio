@@ -30,7 +30,6 @@ export default class Visiteur {
   }
 
   create(scene) {
-    console.log(Phaser.Physics.Matter)
     this.player = new Phaser.Physics.Matter.Sprite(scene.matter.world, this.x, this.y, 'personnages', this.skin)
     scene.add.existing(this.player)
 
@@ -85,14 +84,30 @@ export default class Visiteur {
     this.player.setVelocityY(y)
   }
 
-  deplacementX(x) {
-    if (this.side === 'right') {
-      this.animation('perso-walk-1')
-    }
-    else {
-      this.animation('perso-walk-reverse-1')
+  verifAnimation() {
+    switch (this.skin) {
+      case 'perso1-1':
+        this.number = 1
+        break;
+      case 'perso2-1':
+        this.number = 2
+        break;
+      case 'perso3-1':
+        this.number = 3
+        break;
     }
 
+    if (this.side === 'right') {
+      this.animation('perso-walk-' +  this.number)
+    }
+    else {
+      this.animation('perso-walk-reverse-' + this.number)
+    }
+
+  }
+
+  deplacementX(x) {
+    this.verifAnimation()
     if (this.listeDeplacement[this.posAttraction][0] >= this.player.x - 1 &&  this.listeDeplacement[this.posAttraction][0] <= this.player.x + 1) {
       this.moveToX(0)
       this.posAttraction += 1
@@ -103,13 +118,7 @@ export default class Visiteur {
   }
 
   deplacementY(y) {
-    if (this.side === 'right') {
-      this.animation('perso-walk-1')
-    }
-    else {
-      this.animation('perso-walk-reverse-1')
-    }
-
+    this.verifAnimation()    
     if (this.listeDeplacement[this.posAttraction][1] >= this.player.y - 1 &&  this.listeDeplacement[this.posAttraction][1] <= this.player.y + 1) {
       this.moveToY(0)
       this.posAttraction += 1

@@ -19,7 +19,7 @@ export default class Game extends Phaser.Scene
         this.persoTimer = this.time.now
         
         this.listEntities = []
-
+        this.listBatiments = []
         
         // mise en place du fond d'écran
         this.add.image(680, 384, 'map')
@@ -30,17 +30,21 @@ export default class Game extends Phaser.Scene
         }
 
         // création d'une maison
-        this.listEntities.push(new Batiment(275, 85, 'glace'))
-        this.listEntities.push(new Batiment(670, 80, 'autotamponeuse'))
-        this.listEntities.push(new Batiment(1200, 70, 'chapito'))
-        this.listEntities.push(new Batiment(1260, 310, 'chateau_gonflable'))
-        this.listEntities.push(new Batiment(1200, 550, 'arc'))
-        this.listEntities.push(new Batiment(780, 610, 'train'))
-        this.listEntities.push(new Batiment(275, 610, 'frite'))
-        this.listEntities.push(new Canards(600, 400, 'canard'))
+        this.listBatiments.push(new Batiment(275, 85, 'glace'))
+        this.listBatiments.push(new Batiment(670, 80, 'autotamponeuse'))
+        this.listBatiments.push(new Batiment(1200, 70, 'chapito'))
+        this.listBatiments.push(new Batiment(1260, 310, 'chateau_gonflable'))
+        this.listBatiments.push(new Batiment(1200, 550, 'arc'))
+        this.listBatiments.push(new Batiment(780, 610, 'train'))
+        this.listBatiments.push(new Batiment(275, 610, 'frite'))
+        this.listBatiments.push(new Canards(600, 400, 'canard'))
 
         for (let index = 0; index < this.listEntities.length - 1; index++) {
             this.listEntities[index].create(this)           
+        }
+
+        for (let index = 0; index < this.listBatiments.length; index++) {
+            this.listBatiments[index].create(this)           
         }
 
         this.wood = new Image(80, 30, 'wood')
@@ -60,7 +64,10 @@ export default class Game extends Phaser.Scene
         for (let index = 0; index < this.listEntities.length - 1; index++) {
             this.listEntities[index].update()
         }
-          
+
+        for (let index = 0; index < this.listBatiments.length; index++) {
+            this.listBatiments[index].update()
+        }          
     }
 
     newVisiteur(x, y) {
