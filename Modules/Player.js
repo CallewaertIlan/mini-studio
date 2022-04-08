@@ -7,6 +7,7 @@ export default class You {
 
   create(scene) {
     this.scene = scene
+    this.persoTimer = this.scene.time.now
     // création d'un visiteur
     for (let index = 0; index < 2; index++) {
       this.listEntities.push(new Visiteur(-100 * index, 375))
@@ -19,7 +20,8 @@ export default class You {
 
   update() {
 
-    console.log(this.scene.time.nows) // undefined !!!! a corriger
+    console.log(this.scene.time.now) 
+    console.log(this.scene.time.now) 
     if (this.persoTimer + 5000 <= this.scene.time.now) {
       this.persoTimer = this.scene.time.now
       this.newVisiteur(-100, 375)
