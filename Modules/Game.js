@@ -39,24 +39,24 @@ export default class Game extends Phaser.Scene
 
         this.wood = new Image(80, 30, 'wood')
         this.wood.create(this)
-
-        this.coins = new Interface(0)
-        this.coins.create(this)
-
+        
         this.utilisateur = new Player()
         this.utilisateur.create(this)
+
+        let sizeListEntities = this.utilisateur.listEntities.length
+        console.log(sizeListEntities)
+        this.interface = new Interface(100, 100, this.utilisateur.persoMax, sizeListEntities)
+        this.interface.create(this)
+
     }
 
     update() {
         this.utilisateur.update()
 
+        this.interface.update()
+
         for (let index = 0; index < this.listBatiments.length; index++) {
             this.listBatiments[index].update()
         }          
-    }
-
-    newVisiteur(x, y) {
-        this.listEntities.push(new Visiteur(x, y))
-        this.listEntities[this.listEntities.length - 1].create(this)
     }
 }
