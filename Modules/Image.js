@@ -6,6 +6,7 @@ export default class Image {
     }
   
     create(scene) {
+      scene.add.image(this.x, this.y + 80, this.skin)
       scene.add.image(this.x, this.y, this.skin)
     }
   

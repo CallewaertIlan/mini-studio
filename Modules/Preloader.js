@@ -14,6 +14,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('train', '../Assets/train.png')
         this.load.image('map', '../Assets/map.png')
         this.load.image('wood', '../Assets/wood.png')
+        this.load.image('cadenas', '../Assets/cadenas.png')
         this.load.atlas('personnages', '../Assets/persos.png', '../Assets/persos_atlas.json')
         this.load.animation('personnages_anim', '../Assets/persos_anim.json')
     }

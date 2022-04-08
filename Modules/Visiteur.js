@@ -30,8 +30,9 @@ export default class Visiteur {
   }
 
   create(scene) {
+    this.scene = scene
     this.player = new Phaser.Physics.Matter.Sprite(scene.matter.world, this.x, this.y, 'personnages', this.skin)
-    scene.add.existing(this.player)
+    this.scene.add.existing(this.player)
 
     // créer la liste des attractions a faire
     for (let index = 0; index < 3; index++) {
