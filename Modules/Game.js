@@ -58,6 +58,9 @@ export default class Game extends Phaser.Scene
 
         this.coins = new Interface(0)
         this.coins.create(this)
+
+        this.satisfaction = new Interface(0)
+        this.satisfaction.create(this)
     }
 
     update() {
