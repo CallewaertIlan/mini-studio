@@ -3,6 +3,7 @@ import Visiteur from "./Visiteur.js"
 import Interface from "./Interface.js"
 import Image from "./Image.js"
 import Canards from "./Canards.js"
+import Button from "./Button.js"
 
 export default class Game extends Phaser.Scene
 {
@@ -31,7 +32,12 @@ export default class Game extends Phaser.Scene
 
         // création d'une maison
         this.listBatiments.push(new Batiment(275, 85, 'glace'))
-        this.listBatiments.push(new Batiment(670, 80, 'autotamponeuse'))
+        
+        // this.listBatiments.push(new Button(255, 65))
+        this.button = new Button(255, 65, 'autotamponeuse')
+        this.button.create(this)
+        
+        // this.listBatiments.push(new Batiment(670, 80, 'autotamponeuse'))
         this.listBatiments.push(new Batiment(1200, 70, 'chapito'))
         this.listBatiments.push(new Batiment(1260, 310, 'chateau_gonflable'))
         this.listBatiments.push(new Batiment(1200, 550, 'arc'))
