@@ -1,4 +1,4 @@
-export default class Batiment {
+export default class Building {
   constructor(x, y, skin) {
     this.x = x
     this.y = y
@@ -9,7 +9,5 @@ export default class Batiment {
     scene.add.image(this.x, this.y, this.skin)
   }
 
-  update() {
-    
-  }
+  update() {}
 }

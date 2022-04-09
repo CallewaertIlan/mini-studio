@@ -1,62 +1,53 @@
-import Batiment from "./Batiment.js"
-import Interface from "./Interface.js"
-import Image from "./Image.js"
-import Canards from "./Canards.js"
-import Player from "./Player.js"
-import Button from './Button.js'
+import Building from "./building.js"
+import Button from './button.js'
+import Duck from "./duck.js"
+import Player from "./player.js"
+import Image from "./image.js"
+import Interface from "./interface.js"
 
-export default class Game extends Phaser.Scene
-{
-    constructor()
-	{
-        super('game')
-	}
-    
-	preload() {
-        
+export default class Game extends Phaser.Scene {
+    constructor() {
+        super("game")
     }
-    
+
     create() {
-        this.persoTimer = this.time.now
-        this.listBatiments = []
-        
-        // mise en place du fond d'écran
-        this.add.image(680, 384, 'map')
+        this.characterTime = this.time.now
+        this.buildingsList = []
 
-        // création d'une maison
-        this.listBatiments.push(new Batiment(275, 85, 'glace'))
-        this.listBatiments.push(new Button(675, 65, 'autotamponeuse'))
-        this.listBatiments.push(new Button(1200, 70, 'chapito'))
-        this.listBatiments.push(new Button(1260, 310, 'chateau_gonflable'))
-        this.listBatiments.push(new Button(1200, 550, 'arc'))
-        this.listBatiments.push(new Button(780, 610, 'train'))
-        this.listBatiments.push(new Button(275, 610, 'frite'))
-        this.listBatiments.push(new Canards(600, 400, 'canard'))
+        this.add.image(680, 384, "map")
 
-        for (let index = 0; index < this.listBatiments.length; index++) {
-            this.listBatiments[index].create(this)           
-        }
+        this.buildingsList.push(new Building(275, 85, "ice_cream"))
+        this.buildingsList.push(new Button(675, 65, "bumper_car"))
+        this.buildingsList.push(new Button(1200, 70, "marquee"))
+        this.buildingsList.push(new Button(1260, 310, "inflatable_marquee"))
+        this.buildingsList.push(new Button(1200, 550, "arc"))
+        this.buildingsList.push(new Button(780, 610, "train"))
+        this.buildingsList.push(new Button(275, 610, "fried"))
+        this.buildingsList.push(new Duck(600, 400, "duck"))
 
-        this.wood = new Image(80, 30, 'wood')
+        this.player = new Player()
+        this.player.create(this)
+
+        this.wood = new Image(80, 30, "wood")
         this.wood.create(this)
-        
-        this.utilisateur = new Player()
-        this.utilisateur.create(this)
 
-        let sizeListEntities = this.utilisateur.listEntities.length
-        console.log(sizeListEntities)
-        this.interface = new Interface(100, 100, this.utilisateur.persoMax, sizeListEntities)
+        let entitiesListSize = this.player.entitiesList.length
+        console.log(entitiesListSize)
+        
+        this.interface = new Interface(100, 100, this.player.maxCharacters, entitiesListSize)
         this.interface.create(this)
 
+        for (let i = 0; i < this.buildingsList.length; i++) {
+            this.buildingsList[i].create(this)           
+        }
     }
 
     update() {
-        this.utilisateur.update()
-
+        this.player.update()
         this.interface.update()
 
-        for (let index = 0; index < this.listBatiments.length; index++) {
-            this.listBatiments[index].update()
+        for (let i = 0; i < this.buildingsList.length; i++) {
+            this.buildingsList[i].update()
         }          
     }
 }

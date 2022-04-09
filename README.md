@@ -1,2 +1,2 @@
-# mini-studio
-Projet Mini-studio
+# small studio
+small studio project

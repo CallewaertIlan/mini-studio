@@ -1,26 +1,24 @@
-import Batiment from "./Batiment.js"
+import Building from "./building.js"
 
 export default class Button {
-  constructor(x, y, attractionImg) {
+  constructor(x, y, attractionImage) {
     this.x = x
     this.y = y
-    this.attractionImg = attractionImg
+    this.attractionImage = attractionImage
   }
 
   create(scene) {
     this.scene = scene
-    this.cadenas = scene.add.sprite(this.x, this.y, 'cadenas').setInteractive()
-    this.cadenas.attractionImg = this.attractionImg
-    this.cadenas.on('pointerdown', this.displayAttraction)
+    this.padlock = scene.add.sprite(this.x, this.y, "padlock").setInteractive()
+    this.padlock.attractionImage = this.attractionImage
+    this.padlock.on("pointerdown", this.displayAttraction)
   }
 
-  update() {
-    
-  }
+  update() {}
 
   displayAttraction() {
-    let building = new Batiment(this.x, this.y, this.attractionImg)
+    let building = new Building(this.x, this.y, this.attractionImage)
     building.create(this.scene)
-    this.setActive(false).setVisible(false);
+    this.setActive(false).setVisible(false)
   }
 }

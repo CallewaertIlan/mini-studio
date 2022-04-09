@@ -1,37 +1,33 @@
 export default class Interface {
-  constructor(coins, satisfaction, visiteurMax, visiteur) {
+  constructor(coins, satisfaction, visitors, maxVisitors) {
     this.coins = coins
     this.satisfaction = satisfaction
-    this.visiteur = visiteur
-    this.visiteurMax = visiteurMax
-  }
-
-  preload() {
-    
+    this.visitors = visitors
+    this.maxVisitors = maxVisitors
   }
 
   create(scene) {
     this.scene = scene
-    this.textCoins = this.scene.add.text(40, 29, "Coins : " + this.coins, { font: "17px Varela Round", fill: "#FFFFFF" });
-    this.textSatisfaction = this.scene.add.text(30, 47, "Satisfaction : " + this.satisfaction, { font: "17px Varela Round", fill: "#FFFFFF" });
-    this.textVisiteur = this.scene.add.text(65, 120, this.visiteur + " / " + this.visiteurMax, { font: "17px Varela Round", fill: "#FFFFFF" });
+    this.textCoins = this.scene.add.text(40, 29, "Coins : " + this.coins, { font: "17px Varela Round", fill: "#FFFFFF" })
+    this.textSatisfaction = this.scene.add.text(30, 47, "Satisfaction : " + this.satisfaction, { font: "17px Varela Round", fill: "#FFFFFF" })
+    this.textVisitors = this.scene.add.text(65, 120, this.visitors + " / " + this.maxVisitors, { font: "17px Varela Round", fill: "#FFFFFF" })
   }
 
   update() {
     this.textCoins.text = "Coins : " + this.coins
     this.textSatisfaction.text = "Satisfaction : " + this.satisfaction
-    this.textVisiteur.text = this.visiteur + ' / ' + this.visiteurMax
+    this.textVisitors.text = this.visitors + " / " + this.maxVisitors
   }
 
-  addCoins(addCoin) {
-    this.coins += addCoin
+  addCoins(addCoins) {
+    this.coins += addCoins
   }
 
-  setVisiteurs(setVisiteur) {
-    this.visiteur = setVisiteur
+  setVisitors(setVisitors) {
+    this.visitors = setVisitors
   }
 
-  setMaxVisiteurs(setMaxVisiteur) {
-    this.visiteurMax = setMaxVisiteur
+  setMaxVisitors(setMaxVisitors) {
+    this.maxVisitors = setMaxVisitors
   }
 }
