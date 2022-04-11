@@ -4,6 +4,7 @@ import Duck from "./duck.js"
 import Player from "./player.js"
 import Image from "./image.js"
 import Interface from "./interface.js"
+import Upgarde from './Upgrade.js'
 
 export default class Game extends Phaser.Scene {
     constructor() {
@@ -31,6 +32,9 @@ export default class Game extends Phaser.Scene {
         this.wood = new Image(80, 30, "wood")
         this.wood.create(this)
 
+        this.upgrade = new Upgarde()
+        this.upgrade.create(this)
+
         let entitiesListSize = this.player.entitiesList.length
         console.log(entitiesListSize)
         
@@ -44,6 +48,7 @@ export default class Game extends Phaser.Scene {
 
     update() {
         this.player.update()
+        this.upgrade.update()
         this.interface.update()
 
         for (let i = 0; i < this.buildingsList.length; i++) {
