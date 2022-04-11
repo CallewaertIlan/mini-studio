@@ -5,9 +5,6 @@ export default class Button {
     this.x = x
     this.y = y
     this.attractionImage = attractionImage
-    this.firstUpgradeLevel = 1
-    this.secondUpgradeLevel = 1
-    this.thirdUpgradeLevel = 1
   }
 
   create(scene) {
