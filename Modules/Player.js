@@ -10,9 +10,10 @@ export default class Player {
     this.characterTime = this.scene.time.now
     this.maxCharacters = 5
     this.spawnTime = 4000
+    this.price = 1
 
     for (let i = 0; i < 1; i++) {
-      this.entitiesList.push(new Visitor(-20 * i, 375, this.entitiesList.length, 1))
+      this.entitiesList.push(new Visitor(-20 * i, 375, this.entitiesList.length, this.price))
     }
 
     for (let i = 0; i < this.entitiesList.length; i++) {
@@ -37,7 +38,7 @@ export default class Player {
 
   newVisitor(x, y) {
     this.scene.interface.addCoins(10)
-    this.entitiesList.push(new Visitor(x, y, this.entitiesList.length, 1))
+    this.entitiesList.push(new Visitor(x, y, this.entitiesList.length, this.price))
     this.entitiesList[this.entitiesList.length - 1].create(this.scene)
   }
 }
