@@ -15,10 +15,13 @@ export default class Upgrade {
         // faire des niveaux par améliorations
         this.firstUpgrade.level = 1
         this.secondUpgrade.level = 1
-        this.thirdUpgrade.level = 1     
+        this.thirdUpgrade.level = 1
+        this.firstUpgrade.maxLevel = 10
+        this.secondUpgrade.maxLevel = 10
+        this.thirdUpgrade.maxLevel = 10
         
         // exécuter une fonction quand on clique
-        this.firstUpgrade.on("pointerdown", this.upgradeSpawnSpeed)
+        this.firstUpgrade.on("pointerdown", this.upgradeSpawnTime)
         this.secondUpgrade.on("pointerdown", this.upgradePriceWon)
         this.thirdUpgrade.on("pointerdown", this.upgradeVisitorsNumber)
         
@@ -37,21 +40,24 @@ export default class Upgrade {
         this.thirdTextLevel.text = "Level " + this.thirdUpgrade.level
     }
 
-    upgradeSpawnSpeed() {
-        this.scene.player.spawnTime = this.scene.player.spawnTime - 25 / 100 * this.scene.player.spawnTime
-        this.level += 1
-        // this.price = this.scene.interface.coins -= 10
+    upgradeSpawnTime() {
+        if (this.level < this.maxLevel) {
+            this.level += 1
+            this.scene.player.spawnTime = this.scene.player.spawnTime - 25 / 100 * this.scene.player.spawnTime
+        }
     }
 
     upgradePriceWon() {
-        this.scene.player.price += 1
-        this.level += 1
-        // this.price = this.scene.interface.coins -= 10
+        if (this.level < this.maxLevel) {
+            this.level += 1
+            this.scene.player.price += 1
+        }
     }
 
     upgradeVisitorsNumber() {
-        this.scene.player.maxCharacters *= 2
-        this.level += 1
-        // this.price = this.scene.interface.coins -= 10
+        if (this.level < this.maxLevel) {
+            this.level += 1
+            this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
+        }
     }
 }

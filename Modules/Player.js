@@ -8,7 +8,7 @@ export default class Player {
   create(scene) {
     this.scene = scene
     this.characterTime = this.scene.time.now
-    this.maxCharacters = 5
+    this.maxCharacters = 2
     this.spawnTime = 5000
     this.price = 1
 
