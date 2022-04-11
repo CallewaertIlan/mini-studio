@@ -31,8 +31,8 @@ body {
 
 #about-us p {
     font-size: 25px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-right: 15%;
+    margin-left: 15%;
     text-align: center;
 }
 
@@ -42,7 +42,8 @@ body {
 
 #images .image-presentation {
     display: flex;
-    margin: 100px
+    margin-right: 15%;
+    margin-left: 15%;
 }
 
 #images .image-presentation img {
