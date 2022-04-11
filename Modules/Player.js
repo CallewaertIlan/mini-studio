@@ -8,11 +8,11 @@ export default class Player {
   create(scene) {
     this.scene = scene
     this.characterTime = this.scene.time.now
-    this.maxCharacters = 2
-    this.spawnTime = 5000
+    this.maxCharacters = 5
+    this.spawnTime = 4000
 
     for (let i = 0; i < 1; i++) {
-      this.entitiesList.push(new Visitor(-100 * i, 375))
+      this.entitiesList.push(new Visitor(-20 * i, 375, this.entitiesList.length, 1))
     }
 
     for (let i = 0; i < this.entitiesList.length; i++) {
@@ -21,9 +21,10 @@ export default class Player {
   }
 
   update() {
+    this.scene.entitiesList = this.entitiesList
     if (this.characterTime + this.spawnTime <= this.scene.time.now && this.maxCharacters > this.entitiesList.length) {
       this.characterTime = this.scene.time.now
-      this.newVisitor(-100, 375)
+      this.newVisitor(-20, 375)
     }
 
     for (let i = 0; i < this.entitiesList.length; i++) {
@@ -36,7 +37,7 @@ export default class Player {
 
   newVisitor(x, y) {
     this.scene.interface.addCoins(10)
-    this.entitiesList.push(new Visitor(x, y))
+    this.entitiesList.push(new Visitor(x, y, this.entitiesList.length, 1))
     this.entitiesList[this.entitiesList.length - 1].create(this.scene)
   }
 }

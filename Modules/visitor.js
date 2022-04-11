@@ -1,7 +1,9 @@
 export default class Visitor {
-  constructor(x, y) {
+  constructor(x, y, index, price) {
     this.x = x
     this.y = y
+    this.index = index
+    this.price = price
     this.charactersNamesList = ["perso1-1", "perso2-1", "perso3-1"]
     this.skin = this.charactersNamesList[Math.floor(Math.random() * 3)]
     this.path = []
@@ -22,7 +24,7 @@ export default class Visitor {
       [780, 460],
       [275, 460],
       [275, 410],
-      [-1000, 410],
+      [-20, 410],
     ]
     this.attractionPosition = 0
   }
@@ -123,7 +125,7 @@ export default class Visitor {
       this.moveToY(y)
     }
   }
-
+  
   moveToAttraction() {
     if (this.attractionPosition === 0) {
       this.moveInX(1)
@@ -218,7 +220,19 @@ export default class Visitor {
       this.moveInX(-1)
     }
     else {
-      this.stopMove()
+      this.deleteFromList()
     }
+  }
+  
+  deleteFromList() {
+    for (let index = 0; index < this.scene.entitiesList.length; index++) {
+      if (index === 0) {
+        this.player.destroy()
+      }
+      else {
+        this.scene.entitiesList[index].index -= 1
+      }
+    }
+    this.scene.entitiesList.shift()
   }
 }
