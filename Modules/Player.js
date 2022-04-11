@@ -8,8 +8,8 @@ export default class Player {
   create(scene) {
     this.scene = scene
     this.characterTime = this.scene.time.now
-    this.maxCharacters = 15
-    this.spawnTime = 5000
+    this.maxCharacters = 1000
+    this.spawnTime = 100
 
     for (let i = 0; i < 2; i++) {
       this.entitiesList.push(new Visitor(-100 * i, 375))
