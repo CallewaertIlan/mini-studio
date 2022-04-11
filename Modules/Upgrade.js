@@ -1,3 +1,5 @@
+import RedButton from './RedButton.js'
+
 export default class Upgrade {
     constructor() {}
     
@@ -32,12 +34,19 @@ export default class Upgrade {
         this.secondTextLevel = this.scene.add.text(75, 600, "Level " + this.secondUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
         this.thirdText = this.scene.add.text(75, 680, "Max Visitors", { font: "17px Varela Round", fill: "#FFFFFF" })
         this.thirdTextLevel = this.scene.add.text(75, 700, "Level " + this.thirdUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
+
+        // Bouton magique
+        this.redButton = new RedButton(680, 384)
     }
 
     update() {
         this.firstTextLevel.text = "Level " + this.firstUpgrade.level
         this.secondTextLevel.text = "Level " + this.secondUpgrade.level
         this.thirdTextLevel.text = "Level " + this.thirdUpgrade.level
+
+        if (this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
+            this.redButton.create(this)
+        }
     }
 
     upgradeSpawnTime() {

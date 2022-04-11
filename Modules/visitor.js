@@ -107,7 +107,7 @@ export default class Visitor {
 
   moveInX(x) {
     this.checkAnimation()
-    if (this.moveList[this.attractionPosition][0] >= this.player.x - 1 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 1) {
+    if (this.moveList[this.attractionPosition][0] >= this.player.x - 2 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 2) {
       this.moveToX(0)
       this.attractionPosition += 1
     }
@@ -118,7 +118,7 @@ export default class Visitor {
 
   moveInY(y) {
     this.checkAnimation()    
-    if (this.moveList[this.attractionPosition][1] >= this.player.y - 1 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 1) {
+    if (this.moveList[this.attractionPosition][1] >= this.player.y - 2 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 2) {
       this.moveToY(0)
       this.attractionPosition += 1
     }
