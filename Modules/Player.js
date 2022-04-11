@@ -8,10 +8,10 @@ export default class Player {
   create(scene) {
     this.scene = scene
     this.characterTime = this.scene.time.now
-    this.maxCharacters = 1000
-    this.spawnTime = 100
+    this.maxCharacters = 2
+    this.spawnTime = 5000
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 1; i++) {
       this.entitiesList.push(new Visitor(-100 * i, 375))
     }
 
@@ -30,7 +30,6 @@ export default class Player {
         this.entitiesList[i].update()
     }
 
-    console.log(this.entitiesList.length)
     this.scene.interface.setVisitors(this.entitiesList.length)
     this.scene.interface.setMaxVisitors(this.maxCharacters)
   }
