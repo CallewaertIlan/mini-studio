@@ -9,7 +9,7 @@ export default class Player {
     this.scene = scene
     this.characterTime = this.scene.time.now
     this.maxCharacters = 5
-    this.spawnTime = 4000
+    this.spawnTime = 5000
     this.price = 1
 
     for (let i = 0; i < 1; i++) {
@@ -23,6 +23,7 @@ export default class Player {
 
   update() {
     this.scene.entitiesList = this.entitiesList
+    
     if (this.characterTime + this.spawnTime <= this.scene.time.now && this.maxCharacters > this.entitiesList.length) {
       this.characterTime = this.scene.time.now
       this.newVisitor(-20, 375)

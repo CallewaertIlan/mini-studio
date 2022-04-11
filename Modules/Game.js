@@ -1,10 +1,10 @@
-import Building from "./building.js"
-import Button from './button.js'
-import Duck from "./duck.js"
-import Player from "./player.js"
-import Image from "./image.js"
-import Interface from "./interface.js"
-import Upgarde from './Upgrade.js'
+import Building from "./Building.js"
+import Button from './Button.js'
+import Duck from "./Duck.js"
+import Player from "./Player.js"
+import Image from "./Image.js"
+import Upgrade from './Upgrade.js'
+import Interface from "./Interface.js"
 
 export default class Game extends Phaser.Scene {
     constructor() {
@@ -32,7 +32,7 @@ export default class Game extends Phaser.Scene {
         this.wood = new Image(80, 30, "wood")
         this.wood.create(this)
 
-        this.upgrade = new Upgarde()
+        this.upgrade = new Upgrade()
         this.upgrade.create(this)
 
         let entitiesListSize = this.player.entitiesList.length
