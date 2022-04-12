@@ -52,7 +52,7 @@ export default class Upgrade {
     upgradeSpawnTime() {
         if (this.level < this.maxLevel) {
             this.level += 1
-            this.scene.player.spawnTime = this.scene.player.spawnTime - 25 / 100 * this.scene.player.spawnTime
+            this.scene.player.spawnTime = this.scene.player.spawnTime - 35 / 100 * this.scene.player.spawnTime
         }
     }
 
@@ -67,6 +67,7 @@ export default class Upgrade {
         if (this.level < this.maxLevel) {
             this.level += 1
             this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
+            console.log(this.scene.player.maxCharacters)
         }
     }
 }
