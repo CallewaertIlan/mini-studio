@@ -67,7 +67,6 @@ export default class Upgrade {
         if (this.level < this.maxLevel) {
             this.level += 1
             this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
-            console.log(this.scene.player.maxCharacters)
         }
     }
 }
