@@ -19,6 +19,10 @@ body {
     text-align: center;
 }
 
+div#about-us{
+    padding-bottom: 300px;
+}
+
 #about-us h2, #images h2, #play h2 {
     background-color: #2395F3C0;
     font-size: 50px;
@@ -63,4 +67,8 @@ body {
 #play h2 a {
     text-decoration: none;
     color: #FFFFFF;
+}
+#play{
+    padding-bottom: 300px;
+    padding-top: 300px;
 }

@@ -9,5 +9,8 @@ export default class Duck {
     scene.add.image(this.x, this.y, this.skin)
   }
   
+
+
   update() {}
+
 }
