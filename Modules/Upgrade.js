@@ -50,23 +50,29 @@ export default class Upgrade {
     }
 
     upgradeSpawnTime() {
-        if (this.level < this.maxLevel) {
+        this.price = Math.floor(Math.exp(this.level) * 10)
+        if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.spawnTime = this.scene.player.spawnTime - 35 / 100 * this.scene.player.spawnTime
+            this.scene.interface.coins -= this.price
         }
     }
 
     upgradePriceWon() {
-        if (this.level < this.maxLevel) {
+        this.price = Math.floor(Math.exp(this.level) * 20)
+        if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.price += 1
+            this.scene.interface.coins -= this.price
         }
     }
 
     upgradeVisitorsNumber() {
-        if (this.level < this.maxLevel) {
+        this.price = Math.floor(Math.exp(this.level) * 30)
+        if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
+            this.scene.interface.coins -= this.price
         }
     }
 }
