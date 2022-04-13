@@ -38,7 +38,6 @@ export default class Player {
   }
 
   newVisitor(x, y) {
-    this.scene.interface.addCoins(10)
     this.entitiesList.push(new Visitor(x, y, this.entitiesList.length, this.price))
     this.entitiesList[this.entitiesList.length - 1].create(this.scene)
   }

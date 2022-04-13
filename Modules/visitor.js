@@ -24,7 +24,7 @@ export default class Visitor {
       [780, 460],
       [275, 460],
       [275, 410],
-      [-20, 410],
+      [0, 410],
     ]
     this.attractionPosition = 0
   }
@@ -40,6 +40,7 @@ export default class Visitor {
     }
     
     this.path.sort()
+    console.log(this.path)
 
     this.player.setVelocityX(1)
     this.counter = 0
@@ -110,6 +111,7 @@ export default class Visitor {
     if (this.moveList[this.attractionPosition][0] >= this.player.x - 2 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 2) {
       this.moveToX(0)
       this.attractionPosition += 1
+      this.timeAttraction = this.scene.time.now
     }
     else {
       this.moveToX(x)
@@ -121,6 +123,7 @@ export default class Visitor {
     if (this.moveList[this.attractionPosition][1] >= this.player.y - 2 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 2) {
       this.moveToY(0)
       this.attractionPosition += 1
+      this.timeAttraction = this.scene.time.now
     }
     else {
       this.moveToY(y)
@@ -134,20 +137,20 @@ export default class Visitor {
     else if (this.attractionPosition === 1) {
       this.moveInY(-1)
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 0) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 2) {
       this.moveInX(1)
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 1) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 3) {
       this.moveInX(1)
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 2) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 4) {
       if (this.moveList[this.attractionPosition][0] >= this.player.x - 1 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 1) {
@@ -166,8 +169,8 @@ export default class Visitor {
         this.moveToY(1)
       }
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 3) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 6) {
       if (this.moveList[this.attractionPosition][1] >= this.player.y - 1 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 1) {
@@ -190,8 +193,8 @@ export default class Visitor {
         this.moveToY(1)
       }
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 4) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 9) {
       if (this.moveList[this.attractionPosition][0] >= this.player.x - 1 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 1) {
@@ -205,14 +208,14 @@ export default class Visitor {
       this.moveInY(0)
       this.moveInX(-1)
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 5) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 11) {
       this.moveInX(-1)
     }
-    else if (1 === 2) {
-      this.stopMove()
+    else if (this.path.find(element => element === 6) != undefined) {
+      this.stopAttraction()
     }
     else if (this.attractionPosition === 12) {
       this.moveInY(-1)
@@ -235,5 +238,15 @@ export default class Visitor {
       }
     }
     this.scene.entitiesList.shift()
+  }
+
+  stopAttraction() {
+    if (this.timeAttraction + 2000 <= this.scene.time.now) {
+      this.scene.interface.coins += this.price
+      this.path.shift()
+    }
+    else {
+      this.stopMove()
+    }
   }
 }
