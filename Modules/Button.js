@@ -22,7 +22,6 @@ export default class Button {
     let building = new Building(this.x, this.y, this.attractionImage)
     building.create(this.scene)
     this.setActive(false).setVisible(false)
-    console.log(this)
     this.scene.interface.coins -= this.attractionPrice
   }
 }
