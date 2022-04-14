@@ -19,7 +19,16 @@ body {
     text-align: center;
 }
 
-div#about-us{
+#about-us {
+    padding-bottom: 300px;
+}
+
+#images {
+    background-color: #F0F8FF33;
+}
+
+#play {
+    padding-top: 300px;
     padding-bottom: 300px;
 }
 
@@ -38,10 +47,6 @@ div#about-us{
     margin-right: 15%;
     margin-left: 15%;
     text-align: center;
-}
-
-#images {
-    background-color: #F0F8FF33;
 }
 
 #images .image-presentation {
@@ -67,8 +72,4 @@ div#about-us{
 #play h2 a {
     text-decoration: none;
     color: #FFFFFF;
-}
-#play{
-    padding-bottom: 300px;
-    padding-top: 300px;
 }

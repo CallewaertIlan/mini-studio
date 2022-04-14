@@ -1,4 +1,4 @@
-import Visitor from "./visitor.js"
+import Visitor from "./Visitor.js"
 
 export default class Player {
   constructor() {

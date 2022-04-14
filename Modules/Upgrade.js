@@ -1,4 +1,4 @@
-import RedButton from './RedButton.js'
+import RedButton from "./RedButton.js"
 
 export default class Upgrade {
     constructor() {}
@@ -35,7 +35,7 @@ export default class Upgrade {
         this.thirdText = this.scene.add.text(75, 680, "Max Visitors", { font: "17px Varela Round", fill: "#FFFFFF" })
         this.thirdTextLevel = this.scene.add.text(75, 700, "Level " + this.thirdUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
 
-        // Bouton magique
+        // ajouter le bouton magique
         this.redButton = new RedButton(680, 384)
     }
 
