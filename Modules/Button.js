@@ -12,13 +12,14 @@ export default class Button {
   create(scene) {
     this.scene = scene
     this.padlock = scene.add.sprite(this.x, this.y, "padlock").setInteractive()
-    this.padlock.attractionImage = this.attractionImage
     this.padlock.attractionPrice = this.attractionPrice
+    this.padlock.attractionImage = this.attractionImage
     this.padlock.index = this.index
+    this.padlock.textAttractionPrice = this.scene.add.text(this.x - 40, this.y + 50, "Price " + this.attractionPrice, { font: "17px Varela Round", fill: "#FFFFFF" })
     this.padlock.on("pointerdown", this.displayAttraction)
   }
 
-  update() { }
+  update() {}
 
   displayAttraction() {
     if (this.scene.interface.coins >= this.attractionPrice) {
@@ -26,6 +27,7 @@ export default class Button {
       building.create(this.scene)
       this.setActive(false).setVisible(false)
       this.scene.interface.coins -= this.attractionPrice
+      this.textAttractionPrice.destroy()
     }
   }
 }
