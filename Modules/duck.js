@@ -34,7 +34,7 @@ export default class Duck {
     }
 
     this.duckList.push(this.scene.add.image(this.x, this.y, this.skin))
-    this.duckList[0].visible = false
+    this.duckList[0].destroy()
     this.duckList.shift()
   }
 }
