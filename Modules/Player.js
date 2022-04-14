@@ -3,6 +3,7 @@ import Visitor from "./Visitor.js"
 export default class Player {
   constructor() {
     this.entitiesList = []
+    this.listAttractionUnlock = [1, 0, 0, 0, 0, 0, 0]
   }
 
   create(scene) {
