@@ -29,7 +29,7 @@ export default class Visitor {
   create(scene) {
     this.scene = scene
     this.player = new Phaser.Physics.Matter.Sprite(scene.matter.world, this.x, this.y, "personnages", this.skin)
-    this.player.body.collisionFilter.category = 0
+    // this.player.body.collisionFilter.category = 0
     this.scene.add.existing(this.player)
 
     for (let i = 0; i < 3; i++) {
