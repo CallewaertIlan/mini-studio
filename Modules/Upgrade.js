@@ -22,8 +22,8 @@ export default class Upgrade {
         this.secondUpgrade.maxLevel = 10
         this.thirdUpgrade.maxLevel = 10
         this.firstUpgrade.price = 10
-        this.secondUpgrade.price = 10
-        this.thirdUpgrade.price = 10
+        this.secondUpgrade.price = 20
+        this.thirdUpgrade.price = 30
         
         // exécuter une fonction quand on clique
         this.firstUpgrade.on("pointerdown", this.upgradeSpawnTime)
@@ -33,13 +33,13 @@ export default class Upgrade {
         // ajouter les textes des niveaux
         this.firstText = this.scene.add.text(75, 470, "Spawn Time", { font: "17px Varela Round", fill: "#FFFFFF" })
         this.firstTextLevel = this.scene.add.text(75, 490, "Level " + this.firstUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.firstTextPrice = this.scene.add.text(75, 510, "Price : " + this.firstUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.firstTextPrice = this.scene.add.text(75, 510, "Price : " + this.firstUpgrade.price + '$', { font: "17px Varela Round", fill: "#FFFFFF" })
         this.secondText = this.scene.add.text(75, 570, "Price", { font: "17px Varela Round", fill: "#FFFFFF" })
         this.secondTextLevel = this.scene.add.text(75, 590, "Level " + this.secondUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.secondTextPrice = this.scene.add.text(75, 610, "Price : " + this.secondUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.secondTextPrice = this.scene.add.text(75, 610, "Price : " + this.secondUpgrade.price + '$', { font: "17px Varela Round", fill: "#FFFFFF" })
         this.thirdText = this.scene.add.text(75, 670, "Max Visitors", { font: "17px Varela Round", fill: "#FFFFFF" })
         this.thirdTextLevel = this.scene.add.text(75, 690, "Level " + this.thirdUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.thirdTextPrice = this.scene.add.text(75, 710, "Price : " + this.thirdUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.thirdTextPrice = this.scene.add.text(75, 710, "Price : " + this.thirdUpgrade.price + '$', { font: "17px Varela Round", fill: "#FFFFFF" })
 
         // ajouter le bouton magique
         this.redButton = new RedButton(680, 384)
@@ -49,9 +49,9 @@ export default class Upgrade {
         this.firstTextLevel.text = "Level " + this.firstUpgrade.level
         this.secondTextLevel.text = "Level " + this.secondUpgrade.level
         this.thirdTextLevel.text = "Level " + this.thirdUpgrade.level
-        this.firstTextPrice.text = "Price " + this.firstUpgrade.price
-        this.secondTextPrice.text = "Price " + this.secondUpgrade.price
-        this.thirdTextPrice.text = "Price " + this.thirdUpgrade.price
+        this.firstTextPrice.text = "Price " + this.firstUpgrade.price + '$'
+        this.secondTextPrice.text = "Price " + this.secondUpgrade.price + '$'
+        this.thirdTextPrice.text = "Price " + this.thirdUpgrade.price + '$'
 
         if (this.firstUpgrade.level == this.firstUpgrade.maxLevel) {
             this.firstTextPrice.text = "Max"
@@ -73,29 +73,29 @@ export default class Upgrade {
     }
 
     upgradeSpawnTime() {
-        this.price = Math.floor(Math.exp(this.level) * 10)
         if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.spawnTime = this.scene.player.spawnTime - 35 / 100 * this.scene.player.spawnTime
             this.scene.interface.coins -= this.price
+            this.price = Math.floor(Math.exp(this.level) * 10)
         }
     }
 
     upgradePriceWon() {
-        this.price = Math.floor(Math.exp(this.level) * 20)
         if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.price += 1
             this.scene.interface.coins -= this.price
+            this.price = Math.floor(Math.exp(this.level) * 20)
         }
     }
 
     upgradeVisitorsNumber() {
-        this.price = Math.floor(Math.exp(this.level) * 30)
         if (this.level < this.maxLevel && this.scene.interface.coins >= this.price) {
             this.level += 1
             this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
             this.scene.interface.coins -= this.price
+            this.price = Math.floor(Math.exp(this.level) * 30)
         }
     }
 }

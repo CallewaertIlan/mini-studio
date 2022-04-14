@@ -19,9 +19,11 @@ export default class Button {
   update() { }
 
   displayAttraction() {
-    let building = new Building(this.x, this.y, this.attractionImage)
-    building.create(this.scene)
-    this.setActive(false).setVisible(false)
-    this.scene.interface.coins -= this.attractionPrice
+    if (this.scene.interface.coins >= this.attractionPrice) {
+      let building = new Building(this.x, this.y, this.attractionImage)
+      building.create(this.scene)
+      this.setActive(false).setVisible(false)
+      this.scene.interface.coins -= this.attractionPrice
+    }
   }
 }
