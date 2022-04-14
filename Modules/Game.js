@@ -17,14 +17,14 @@ export default class Game extends Phaser.Scene {
 
         this.add.image(680, 384, "map")
 
-        this.buildingsList.push(new Building(275, 85, "ice_cream"))
-        this.buildingsList.push(new Button(675, 65, "bumper_car"))
-        this.buildingsList.push(new Button(1200, 70, "marquee"))
-        this.buildingsList.push(new Button(1260, 310, "inflatable_marquee"))
-        this.buildingsList.push(new Button(1200, 550, "arc"))
-        this.buildingsList.push(new Button(780, 610, "train"))
-        this.buildingsList.push(new Button(275, 610, "fried"))
-        this.buildingsList.push(new Duck(600, 400, "duck"))
+        this.buildingsList.push(new Building(275, 85, "ice_cream", 1))
+        this.buildingsList.push(new Button(675, 65, "bumper_car", 2))
+        this.buildingsList.push(new Button(1200, 70, "marquee", 3))
+        this.buildingsList.push(new Button(1260, 310, "inflatable_marquee", 4 ))
+        this.buildingsList.push(new Button(1200, 550, "arc", 5 ))
+        this.buildingsList.push(new Button(780, 610, "train", 6))
+        this.buildingsList.push(new Button(275, 610, "fried", 7))
+        this.buildingsList.push(new Duck(600, 400, "duck", 8))
 
         this.player = new Player()
         this.player.create(this)
