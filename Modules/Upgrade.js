@@ -21,6 +21,9 @@ export default class Upgrade {
         this.firstUpgrade.maxLevel = 10
         this.secondUpgrade.maxLevel = 10
         this.thirdUpgrade.maxLevel = 10
+        this.firstUpgrade.price = 10
+        this.secondUpgrade.price = 10
+        this.thirdUpgrade.price = 10
         
         // exécuter une fonction quand on clique
         this.firstUpgrade.on("pointerdown", this.upgradeSpawnTime)
@@ -28,12 +31,15 @@ export default class Upgrade {
         this.thirdUpgrade.on("pointerdown", this.upgradeVisitorsNumber)
         
         // ajouter les textes des niveaux
-        this.firstText = this.scene.add.text(75, 480, "Spawn Time", { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.firstTextLevel = this.scene.add.text(75, 500, "Level " + this.firstUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.secondText = this.scene.add.text(75, 580, "Price", { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.secondTextLevel = this.scene.add.text(75, 600, "Level " + this.secondUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.thirdText = this.scene.add.text(75, 680, "Max Visitors", { font: "17px Varela Round", fill: "#FFFFFF" })
-        this.thirdTextLevel = this.scene.add.text(75, 700, "Level " + this.thirdUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.firstText = this.scene.add.text(75, 470, "Spawn Time", { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.firstTextLevel = this.scene.add.text(75, 490, "Level " + this.firstUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.firstTextPrice = this.scene.add.text(75, 510, "Price : " + this.firstUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.secondText = this.scene.add.text(75, 570, "Price", { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.secondTextLevel = this.scene.add.text(75, 590, "Level " + this.secondUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.secondTextPrice = this.scene.add.text(75, 610, "Price : " + this.secondUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.thirdText = this.scene.add.text(75, 670, "Max Visitors", { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.thirdTextLevel = this.scene.add.text(75, 690, "Level " + this.thirdUpgrade.level, { font: "17px Varela Round", fill: "#FFFFFF" })
+        this.thirdTextPrice = this.scene.add.text(75, 710, "Price : " + this.thirdUpgrade.price, { font: "17px Varela Round", fill: "#FFFFFF" })
 
         // ajouter le bouton magique
         this.redButton = new RedButton(680, 384)
@@ -43,10 +49,27 @@ export default class Upgrade {
         this.firstTextLevel.text = "Level " + this.firstUpgrade.level
         this.secondTextLevel.text = "Level " + this.secondUpgrade.level
         this.thirdTextLevel.text = "Level " + this.thirdUpgrade.level
+        this.firstTextPrice.text = "Price " + this.firstUpgrade.price
+        this.secondTextPrice.text = "Price " + this.secondUpgrade.price
+        this.thirdTextPrice.text = "Price " + this.thirdUpgrade.price
 
-        if (this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
-            this.redButton.create(this)
+        if (this.firstUpgrade.level == this.firstUpgrade.maxLevel) {
+            this.firstTextPrice.text = "Max"
         }
+
+        if (this.secondUpgrade.level == this.secondUpgrade.maxLevel) {
+            this.secondTextPrice.text = "Max"
+        }
+
+        if (this.thirdUpgrade.level == this.thirdUpgrade.maxLevel) {
+            this.thirdTextPrice.text = "Max"
+        }
+
+        /*
+            if (this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
+                this.redButton.create(this)
+            }
+        */
     }
 
     upgradeSpawnTime() {
