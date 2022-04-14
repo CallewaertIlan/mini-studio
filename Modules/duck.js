@@ -3,23 +3,20 @@ export default class Duck {
     this.x = x
     this.y = y
     this.skin = skin
-    this.animaton = 'up'
-    this.listDuck = []
+    this.animaton = "up"
+    this.duckList = []
   }
 
   create(scene) {
     this.scene = scene
     this.timeBeforeAnimation = this.scene.time.now
-    this.listDuck.push(this.scene.add.image(this.x, this.y, this.skin))
+    this.duckList.push(this.scene.add.image(this.x, this.y, this.skin))
   }
   
-
-
   update() {
     if (this.animaton == "up") {
-      console.log("up")
       if (this.timeBeforeAnimation + 1000 < this.scene.time.now) {
-        this.animaton = 'down'
+        this.animaton = "down"
         this.timeBeforeAnimation = this.scene.time.now
       }
       else {
@@ -27,9 +24,8 @@ export default class Duck {
       }
     }
     else {
-      console.log("down")
       if (this.timeBeforeAnimation + 1000 < this.scene.time.now) {
-        this.animaton = 'up'
+        this.animaton = "up"
         this.timeBeforeAnimation = this.scene.time.now
       }
       else {
@@ -37,9 +33,8 @@ export default class Duck {
       }
     }
 
-    this.listDuck.push(this.scene.add.image(this.x, this.y, this.skin))
-    this.listDuck[0].visible = false
-    this.listDuck.shift()
+    this.duckList.push(this.scene.add.image(this.x, this.y, this.skin))
+    this.duckList[0].visible = false
+    this.duckList.shift()
   }
-
 }
