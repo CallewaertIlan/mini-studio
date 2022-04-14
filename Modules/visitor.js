@@ -29,7 +29,7 @@ export default class Visitor {
   create(scene) {
     this.scene = scene
     this.player = new Phaser.Physics.Matter.Sprite(scene.matter.world, this.x, this.y, "personnages", this.skin)
-    // this.player.body.collisionFilter.category = 0
+    this.player.body.collisionFilter.category = 0
     this.scene.add.existing(this.player)
 
     for (let i = 0; i < 3; i++) {
@@ -57,6 +57,9 @@ export default class Visitor {
     else if (this.skin == "perso3-1") {
       this.player.anims.play(name, true)
     }
+    else if (name == 'stopMove') {
+      this.player.anims.play('perso-walk-' + this.number, false)
+    }
   }
 
   addPath() {
@@ -70,6 +73,7 @@ export default class Visitor {
   }
 
   stopMove() {
+    this.animation('stopMove')
     this.player.setVelocityX(0)
     this.player.setVelocityY(0)
   }
@@ -134,19 +138,19 @@ export default class Visitor {
     else if (this.attractionPosition === 1) {
       this.moveInY(-1)
     }
-    else if (this.path.find(element => element === 0) != undefined) {
+    else if (this.path.find(element => element === 0) != undefined && this.scene.player.listAttractionUnlock[0] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 2) {
       this.moveInX(1)
     }
-    else if (this.path.find(element => element === 1) != undefined) {
+    else if (this.path.find(element => element === 1) != undefined && this.scene.player.listAttractionUnlock[1] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 3) {
       this.moveInX(1)
     }
-    else if (this.path.find(element => element === 2) != undefined) {
+    else if (this.path.find(element => element === 2) != undefined && this.scene.player.listAttractionUnlock[2] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 4) {
@@ -155,26 +159,26 @@ export default class Visitor {
     else if (this.attractionPosition === 5) {
       this.moveInY(1)
     }
-    else if (this.path.find(element => element === 3) != undefined) {
+    else if (this.path.find(element => element === 3) != undefined && this.scene.player.listAttractionUnlock[3] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 6) {
       this.moveInY(1)
     }
-    else if (this.path.find(element => element === 4) != undefined) {
+    else if (this.path.find(element => element === 4) != undefined && this.scene.player.listAttractionUnlock[4] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 7) {
       this.side = "left"
       this.moveInX(-1)
     }
-    else if (this.path.find(element => element === 5) != undefined) {
+    else if (this.path.find(element => element === 5) != undefined && this.scene.player.listAttractionUnlock[5] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 8) {
       this.moveInX(-1)
     }
-    else if (this.path.find(element => element === 6) != undefined) {
+    else if (this.path.find(element => element === 6) != undefined && this.scene.player.listAttractionUnlock[6] == 1) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 9) {
@@ -192,6 +196,7 @@ export default class Visitor {
     let listEntities = this.scene.entitiesList
     for (let index = 0; index < listEntities.length; index++) {
       if (index === 0) {
+        this.player.visible = false
         this.player.destroy()
       }
       else {
