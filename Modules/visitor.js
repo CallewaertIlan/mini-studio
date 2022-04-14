@@ -14,15 +14,12 @@ export default class Visitor {
       [275, 404],
       [275, 211],
       [674, 211],
-      [975, 211],
-      [1040, 211],
-      [1060, 300],
-      [1060, 350],
-      [1050, 300],
-      [1050, 460],
-      [980, 460],
-      [780, 460],
-      [275, 460],
+      [1055, 211],
+      [1120, 211],
+      [1120, 325],
+      [1120, 485],
+      [815, 485],
+      [275, 485],
       [275, 410],
       [0, 410],
     ]
@@ -153,74 +150,37 @@ export default class Visitor {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 4) {
-      if (this.moveList[this.attractionPosition][0] >= this.player.x - 1 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 1) {
-        this.attractionPosition += 1
-      }
-      else {
-        this.moveToX(1)
-      }
+      this.moveInX(1)
     }
     else if (this.attractionPosition === 5) {
-      if (this.moveList[this.attractionPosition][1] >= this.player.y - 1 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 1) {
-        this.moveToY(0)
-        this.attractionPosition += 1
-      }
-      else {
-        this.moveToY(1)
-      }
+      this.moveInY(1)
     }
     else if (this.path.find(element => element === 3) != undefined) {
       this.stopAttraction()
     }
     else if (this.attractionPosition === 6) {
-      if (this.moveList[this.attractionPosition][1] >= this.player.y - 1 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 1) {
-        this.attractionPosition += 1
-        this.side = "left"
-      }
-      else {
-        this.moveToX(0)
-        this.moveToY(1)
-      }
-    }
-    else if (this.attractionPosition === 7) {
-      this.moveInX(-1)
-    }
-    else if (this.attractionPosition === 8) {
-      if (this.moveList[this.attractionPosition][1] >= this.player.y - 1 &&  this.moveList[this.attractionPosition][1] <= this.player.y + 1) {
-        this.attractionPosition += 1
-      }
-      else {
-        this.moveToY(1)
-      }
+      this.moveInY(1)
     }
     else if (this.path.find(element => element === 4) != undefined) {
       this.stopAttraction()
     }
-    else if (this.attractionPosition === 9) {
-      if (this.moveList[this.attractionPosition][0] >= this.player.x - 1 &&  this.moveList[this.attractionPosition][0] <= this.player.x + 1) {
-        this.attractionPosition += 1
-      }
-      else {
-        this.moveToX(-1)
-      }
-    }
-    else if (this.attractionPosition === 10) {
-      this.moveInY(0)
+    else if (this.attractionPosition === 7) {
+      this.side = "left"
       this.moveInX(-1)
     }
     else if (this.path.find(element => element === 5) != undefined) {
       this.stopAttraction()
     }
-    else if (this.attractionPosition === 11) {
+    else if (this.attractionPosition === 8) {
       this.moveInX(-1)
     }
     else if (this.path.find(element => element === 6) != undefined) {
       this.stopAttraction()
     }
-    else if (this.attractionPosition === 12) {
+    else if (this.attractionPosition === 9) {
       this.moveInY(-1)
     }
-    else if (this.attractionPosition === 13) {
+    else if (this.attractionPosition === 10) {
       this.moveInX(-1)
     }
     else {
@@ -229,15 +189,17 @@ export default class Visitor {
   }
   
   deleteFromList() {
-    for (let index = 0; index < this.scene.entitiesList.length; index++) {
+    let listEntities = this.scene.entitiesList
+    for (let index = 0; index < listEntities.length; index++) {
       if (index === 0) {
         this.player.destroy()
       }
       else {
-        this.scene.entitiesList[index].index -= 1
+        listEntities[index].index -= 1
       }
     }
-    this.scene.entitiesList.shift()
+    listEntities.shift()
+    this.scene.entitiesList = listEntities
   }
 
   stopAttraction() {
