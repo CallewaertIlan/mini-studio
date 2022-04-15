@@ -5,6 +5,7 @@ export default class Preloader extends Phaser.Scene {
 
     preload() {
         this.load.image("map", "../assets/map.png")
+        this.load.image("background", "../images/background.jpg")
         this.load.image("ice_cream", "../assets/ice_cream.png")
         this.load.image("bumper_car", "../assets/bumper_car.png")
         this.load.image("marquee", "../assets/marquee.png")
@@ -14,6 +15,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("fried", "../assets/fried.png")
         this.load.image("duck", "../assets/duck.png")
         this.load.image("wood", "../assets/wood.png")
+        this.load.image("play", "../assets/play.png")
         this.load.image("padlock", "../assets/padlock.png")
         this.load.image("upgrade", "../assets/upgrade.png")
         this.load.image("redButton", "../assets/redButton.png")
@@ -22,6 +24,6 @@ export default class Preloader extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("game")
+        this.scene.start("playmenu")
     }
 }

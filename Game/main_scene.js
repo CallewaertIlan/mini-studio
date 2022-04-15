@@ -1,5 +1,6 @@
 import Preloader from "../modules/preloader.js"
 import Game from "../modules/game.js"
+import PlayMenu from "../Modules/PlayMenu.js"
 
 const config = {
 	type: Phaser.AUTO,
@@ -14,7 +15,7 @@ const config = {
 			},
 		},
 	},
-	scene: [Preloader, Game],
+	scene: [Preloader, PlayMenu, Game],
 }
 
 export default new Phaser.Game(config)
