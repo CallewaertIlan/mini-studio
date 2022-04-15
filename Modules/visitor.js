@@ -214,9 +214,11 @@ export default class Visitor {
       console.log(this.price * 5 * this.attractionPosition)
       this.scene.interface.coins += this.price * 5 * this.attractionPosition
       this.path.shift()
+      // this.player.visible = true
     }
     else {
       this.stopMove()
+      // this.player.visible = false
     }
   }
 }
