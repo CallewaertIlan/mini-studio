@@ -37,7 +37,6 @@ export default class Visitor {
     }
     
     this.path.sort()
-    console.log(this.path)
 
     this.player.setVelocityX(1)
     this.counter = 0
@@ -209,9 +208,6 @@ export default class Visitor {
 
   stopAttraction() {
     if (this.timeAttraction + 2000 <= this.scene.time.now) {
-      console.log(this.attractionPosition)
-      console.log(this.price)
-      console.log(this.price * 5 * this.attractionPosition)
       this.scene.interface.coins += this.price * 5 * this.attractionPosition
       this.path.shift()
       // this.player.visible = true

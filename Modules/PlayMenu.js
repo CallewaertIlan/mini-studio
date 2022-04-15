@@ -16,7 +16,6 @@ export default class PlayMenu extends Phaser.Scene {
     }
 
     playGame() {
-        console.log(this)
         this.scene.scene.start("game")
     }
 }

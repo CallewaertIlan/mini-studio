@@ -16,6 +16,8 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("duck", "../assets/duck.png")
         this.load.image("wood", "../assets/wood.png")
         this.load.image("play", "../assets/play.png")
+        this.load.image('mario', '../assets/mario.png')
+        this.load.image('mario_reverse', '../assets/mario_reverse.png')
         this.load.image("padlock", "../assets/padlock.png")
         this.load.image("upgrade", "../assets/upgrade.png")
         this.load.image("redButton", "../assets/redButton.png")

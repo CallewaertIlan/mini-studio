@@ -1,7 +1,9 @@
-import RedButton from "./RedButton.js"
+import Mario from "./Mario.js"
 
 export default class Upgrade {
-    constructor() {}
+    constructor() {
+        this.addNumber = 0
+    }
     
     create(scene) {
         this.scene = scene
@@ -42,7 +44,7 @@ export default class Upgrade {
         this.thirdTextPrice = this.scene.add.text(75, 710, "Price : " + this.thirdUpgrade.price + '$', { font: "17px Varela Round", fill: "#FFFFFF" })
 
         // ajouter le bouton magique
-        this.redButton = new RedButton(680, 384)
+        this.you = new Mario(0, 404)
     }
 
     update() {
@@ -65,11 +67,14 @@ export default class Upgrade {
             this.thirdTextPrice.text = "Max"
         }
 
-        /*
-            if (this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
-                this.redButton.create(this)
-            }
-        */
+        // if (this.addNumber == 0 && this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
+        if (this.addNumber == 0) {
+            this.addNumber += 1
+            this.you.create(this.scene)
+        }
+        else if (this.addNumber != 0) {
+            this.you.update()
+        }
     }
 
     upgradeSpawnTime() {
