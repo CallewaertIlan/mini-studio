@@ -9,7 +9,7 @@ export default class Interface {
   create(scene) {
     this.scene = scene
     this.textCoins = this.scene.add.text(40, 29, "Coins : " + this.coins, { font: "17px Varela Round", fill: "#FFFFFF" })
-    this.textSatisfaction = this.scene.add.text(30, 47, "Satisfaction : " + this.satisfaction, { font: "17px Varela Round", fill: "#FFFFFF" })
+    this.textSatisfaction = this.scene.add.text(22, 47, "Satisfaction : " + this.satisfaction, { font: "17px Varela Round", fill: "#FFFFFF" })
     this.textVisitors = this.scene.add.text(65, 120, this.visitors + " / " + this.maxVisitors, { font: "17px Varela Round", fill: "#FFFFFF" })
   }
 

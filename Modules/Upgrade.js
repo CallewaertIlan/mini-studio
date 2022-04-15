@@ -67,8 +67,7 @@ export default class Upgrade {
             this.thirdTextPrice.text = "Max"
         }
 
-        // if (this.addNumber == 0 && this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
-        if (this.addNumber == 0) {
+        if (this.addNumber == 0 && this.firstUpgrade.level === this.firstUpgrade.maxLevel && this.secondUpgrade.level === this.secondUpgrade.maxLevel && this.thirdUpgrade.level === this.thirdUpgrade.maxLevel) {
             this.addNumber += 1
             this.you.create(this.scene)
         }
