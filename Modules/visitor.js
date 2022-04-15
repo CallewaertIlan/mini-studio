@@ -209,7 +209,10 @@ export default class Visitor {
 
   stopAttraction() {
     if (this.timeAttraction + 2000 <= this.scene.time.now) {
-      this.scene.interface.coins += this.price * 10
+      console.log(this.attractionPosition)
+      console.log(this.price)
+      console.log(this.price * 5 * this.attractionPosition)
+      this.scene.interface.coins += this.price * 5 * this.attractionPosition
       this.path.shift()
     }
     else {

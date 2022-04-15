@@ -38,11 +38,11 @@ export default class Game extends Phaser.Scene {
 
         let entitiesListSize = this.player.entitiesList.length
         
-        this.interface = new Interface(1, 100, this.player.maxCharacters, entitiesListSize)
+        this.interface = new Interface(4000, 100, this.player.maxCharacters, entitiesListSize)
         this.interface.create(this)
 
         for (let i = 0; i < this.buildingsList.length; i++) {
-            this.buildingsList[i].create(this)           
+            this.buildingsList[i].create(this)
         }
     }
 
@@ -53,6 +53,6 @@ export default class Game extends Phaser.Scene {
 
         for (let i = 0; i < this.buildingsList.length; i++) {
             this.buildingsList[i].update()
-        }          
+        }
     }
 }

@@ -20,16 +20,19 @@ body {
 }
 
 #about-us {
-    padding-bottom: 300px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #images {
     background-color: #F0F8FF33;
+    padding-top: 2%;
+    padding-bottom: 5%;
 }
 
 #play {
-    padding-top: 300px;
-    padding-bottom: 300px;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
 #about-us h2, #images h2, #play h2 {

@@ -15,7 +15,7 @@ export default class Button {
     this.padlock.attractionPrice = this.attractionPrice
     this.padlock.attractionImage = this.attractionImage
     this.padlock.index = this.index
-    this.padlock.textAttractionPrice = this.scene.add.text(this.x - 40, this.y + 50, "Price " + this.attractionPrice, { font: "17px Varela Round", fill: "#FFFFFF" })
+    this.padlock.textAttractionPrice = this.scene.add.text(this.x - 50, this.y + 50, "Price " + this.attractionPrice + '$', { font: "17px Varela Round", fill: "#000000" })
     this.padlock.on("pointerdown", this.displayAttraction)
   }
 

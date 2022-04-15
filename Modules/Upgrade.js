@@ -21,9 +21,9 @@ export default class Upgrade {
         this.firstUpgrade.maxLevel = 10
         this.secondUpgrade.maxLevel = 10
         this.thirdUpgrade.maxLevel = 10
-        this.firstUpgrade.price = 10
-        this.secondUpgrade.price = 20
-        this.thirdUpgrade.price = 30
+        this.firstUpgrade.price = 30
+        this.secondUpgrade.price = 10
+        this.thirdUpgrade.price = 20
         
         // exécuter une fonction quand on clique
         this.firstUpgrade.on("pointerdown", this.upgradeSpawnTime)
@@ -77,7 +77,7 @@ export default class Upgrade {
             this.level += 1
             this.scene.player.spawnTime = this.scene.player.spawnTime - 35 / 100 * this.scene.player.spawnTime
             this.scene.interface.coins -= this.price
-            this.price = Math.floor(Math.exp(this.level) * 10)
+            this.price = Math.floor(Math.exp(this.level) * 30)
         }
     }
 
@@ -86,7 +86,7 @@ export default class Upgrade {
             this.level += 1
             this.scene.player.price += 1
             this.scene.interface.coins -= this.price
-            this.price = Math.floor(Math.exp(this.level) * 20)
+            this.price = Math.floor(Math.exp(this.level) * 10)
         }
     }
 
@@ -95,7 +95,7 @@ export default class Upgrade {
             this.level += 1
             this.scene.player.maxCharacters = Math.floor(this.scene.player.maxCharacters * 1.7)
             this.scene.interface.coins -= this.price
-            this.price = Math.floor(Math.exp(this.level) * 30)
+            this.price = Math.floor(Math.exp(this.level) * 20)
         }
     }
 }
